@@ -37,7 +37,6 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
         <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -102,87 +101,93 @@
                     </ul>
                 </div>
             </div>
-        </header><!--/header-->
-        <hr><hr><hr>
-        <div class="panel panel-default">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <h1>Google Maps API</h1>
-                    <br><br>
-                    <div id="map" style="width:300px; height:300px"></div>
-                    <script>
-                        function initMap() {
-                            var chicago = {lat: 41.85, lng: -87.65};
-                            var indianapolis = {lat: 39.79, lng: -86.14};
-
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                center: chicago,
-                                scrollwheel: false,
-                                zoom: 7
-                            });
-
-                            var directionsDisplay = new google.maps.DirectionsRenderer({
-                                map: map
-                            });
-
-                            // Set destination, origin and travel mode.
-                            var request = {
-                                destination: indianapolis,
-                                origin: chicago,
-                                travelMode: 'DRIVING'
-                            };
-
-                            // Pass the directions request to the directions service.
-                            var directionsService = new google.maps.DirectionsService();
-                            directionsService.route(request, function (response, status) {
-                                if (status == 'OK') {
-                                    // Display the route on the map.
-                                    directionsDisplay.setDirections(response);
-                                }
-                            });
-                        }
-
-                    </script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
-                    async defer></script>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="service-wrapper">
+        </header><!--/header--><!-- Page Title -->
+        <div class="section section-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
                         <h1>Busqueda de tutorias</h1>
-                        <div class="col-md-6 col-sm-6">
-                            <h1>Por hora</h1>
-                            <input>    
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <h1>Por precio</h1>
-                            <input>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <h1>Por ubicación</h1>
-                            <input>    
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <h1>Por votos</h1>
-                            <input>
-                        </div>
-                        <div class="col-md-12 col-sm-6">
-                            <h1>Busqueda Avanzada</h1>
-                            <input>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-6">
-                    <div class="service-wrapper">
-                        <h1>Registro ONE-CLICK</h1>
-                        <div class="col-md-12 col-sm-6">
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-google-plus"></i></a>
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-facebook"></i></a>
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-twitter"></i></a>
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-twitch"></i></a>
-                            <br><br>
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3  col-md-offset-2 col-sm-6">
+                <h1>Google Maps API</h1>
+                <br><br>
+                <div id="map" style="width:300px; height:300px"></div>
+                <script>
+                    function initMap() {
+                        var chicago = {lat: 41.85, lng: -87.65};
+                        var indianapolis = {lat: 39.79, lng: -86.14};
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: chicago,
+                            scrollwheel: false,
+                            zoom: 7
+                        });
+
+                        var directionsDisplay = new google.maps.DirectionsRenderer({
+                            map: map
+                        });
+
+                        // Set destination, origin and travel mode.
+                        var request = {
+                            destination: indianapolis,
+                            origin: chicago,
+                            travelMode: 'DRIVING'
+                        };
+
+                        // Pass the directions request to the directions service.
+                        var directionsService = new google.maps.DirectionsService();
+                        directionsService.route(request, function (response, status) {
+                            if (status == 'OK') {
+                                // Display the route on the map.
+                                directionsDisplay.setDirections(response);
+                            }
+                        });
+                    }
+
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                async defer></script>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="service-wrapper">
+                    <h1>Busqueda de tutorias</h1>
+                    <div class="col-md-6 col-sm-6">
+                        <h1>Por hora</h1>
+                        <input class="form-control" type="text">    
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <h1>Por precio</h1>
+                        <input class="form-control" type="text">
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <h1>Por ubicación</h1>
+                        <input class="form-control" type="text">    
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <h1>Por votos</h1>
+                        <input class="form-control" type="text">
+                    </div>
+                    <div class="col-md-12 col-sm-6">
+                        <h1>Busqueda Avanzada</h1>
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-6">
+                <div class="service-wrapper">
+                    <h1>Registro ONE-CLICK</h1>
+                    <div class="col-md-12 col-sm-6">
+                        <a class="btn btn-social-icon btn-github"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-github"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-github"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-github"><i class="fa fa-twitch"></i></a>
+                        <br><br>
                     </div>
                 </div>
             </div>

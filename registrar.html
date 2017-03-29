@@ -102,92 +102,100 @@
                 </div>
             </div>
         </header><!--/header-->
-        <!-- Services -->
-        <div class="section section-white">
-            <hr><hr>
-            <div class="panel panel-default">
+
+        <!-- Page Title -->
+        <div class="section section-breadcrumbs">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-6">
-                        <div class="service-wrapper">
-                            <h1>Registro por formulario</h1>
-                            <div class="col-md-6 col-sm-6">
-                                <h2>Nombre:</h2>
-                                <input>
-                                <h2>Apellido:</h2>
-                                <input>
-                                <h2>Tipo de documento:</h2>
-                                <input>
-                                <h2>Número de Documento:</h2>
-                                <input>
-                                <h2>Telefono:</h2>
-                                <input>    
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <h2>Correo:</h2>
-                                <input>
-                                <h2>Nombre de Usuario:</h2>
-                                <input>
-                                <h2>Contraseña:</h2>
-                                <input>
-                                <h2>Repetir Contraseña:</h2>
-                                <input>
-                                <h2>Tipo de usuario:</h2>
-                                <input>
-                            </div>
+                    <div class="col-md-6">
+                        <h1>Registro</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-white">
+            <div class="row">
+                <div class="col-md-12 col-sm-6">
+                    <div class="service-wrapper">
+                        <h1>Registro por formulario</h1>
+                        <div class="col-md-4 col-sm-6">
+                            <h2>Nombre:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Apellido:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Tipo de documento:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Número de Documento:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Telefono:</h2>
+                            <input class="form-control" type="text">    
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <h2>Correo:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Nombre de Usuario:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Contraseña:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Repetir Contraseña:</h2>
+                            <input class="form-control" type="text">
+                            <h2>Tipo de usuario:</h2>
+                            <input class="form-control" type="text">
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <h1>Ubicación Google Maps</h1>
+                            <br><br>
+                            <div id="map" style="width:300px; height:300px"></div>
+                            <script>
+                                function initMap() {
+                                    var chicago = {lat: 41.85, lng: -87.65};
+                                    var indianapolis = {lat: 39.79, lng: -86.14};
+
+                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                        center: chicago,
+                                        scrollwheel: false,
+                                        zoom: 7
+                                    });
+
+                                    var directionsDisplay = new google.maps.DirectionsRenderer({
+                                        map: map
+                                    });
+
+                                    // Set destination, origin and travel mode.
+                                    var request = {
+                                        destination: indianapolis,
+                                        origin: chicago,
+                                        travelMode: 'DRIVING'
+                                    };
+
+                                    // Pass the directions request to the directions service.
+                                    var directionsService = new google.maps.DirectionsService();
+                                    directionsService.route(request, function (response, status) {
+                                        if (status == 'OK') {
+                                            // Display the route on the map.
+                                            directionsDisplay.setDirections(response);
+                                        }
+                                    });
+                                }
+
+                            </script>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                            async defer></script>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                    <h1>Ubicación Google Maps</h1>
-                    <br><br>
-                    <div id="map" style="width:300px; height:300px"></div>
-                    <script>
-                        function initMap() {
-                            var chicago = {lat: 41.85, lng: -87.65};
-                            var indianapolis = {lat: 39.79, lng: -86.14};
-
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                center: chicago,
-                                scrollwheel: false,
-                                zoom: 7
-                            });
-
-                            var directionsDisplay = new google.maps.DirectionsRenderer({
-                                map: map
-                            });
-
-                            // Set destination, origin and travel mode.
-                            var request = {
-                                destination: indianapolis,
-                                origin: chicago,
-                                travelMode: 'DRIVING'
-                            };
-
-                            // Pass the directions request to the directions service.
-                            var directionsService = new google.maps.DirectionsService();
-                            directionsService.route(request, function (response, status) {
-                                if (status == 'OK') {
-                                    // Display the route on the map.
-                                    directionsDisplay.setDirections(response);
-                                }
-                            });
-                        }
-
-                    </script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
-                    async defer></script>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-6">
-                        <div class="service-wrapper">
-                            <h1>Registro ONE-CLICK</h1>
-                            <div class="col-md-12 col-sm-6">
-                                <a class="btn btn-social-icon btn-github"><i class="fa fa-google-plus"></i></a>
-                                <a class="btn btn-social-icon btn-github"><i class="fa fa-facebook"></i></a>
-                                <a class="btn btn-social-icon btn-github"><i class="fa fa-twitter"></i></a>
-                                <a class="btn btn-social-icon btn-github"><i class="fa fa-twitch"></i></a>
-                                <br><br>
-                            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-6">
+                    <div class="service-wrapper">
+                        <h1>Registro ONE-CLICK</h1>
+                        <div class="col-md-12 col-sm-6">
+                            <a class="btn btn-social-icon btn-github"><i class="fa fa-google-plus"></i></a>
+                            <a class="btn btn-social-icon btn-github"><i class="fa fa-facebook"></i></a>
+                            <a class="btn btn-social-icon btn-github"><i class="fa fa-twitter"></i></a>
+                            <a class="btn btn-social-icon btn-github"><i class="fa fa-twitch"></i></a>
+                            <br><br>
                         </div>
                     </div>
                 </div>
