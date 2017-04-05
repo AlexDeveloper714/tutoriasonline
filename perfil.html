@@ -136,12 +136,12 @@
                             <div id="map" style="width:300px; height:300px"></div>
                             <script>
                                 function initMap() {
-                                    var chicago = {lat: 41.85, lng: -87.65};
-                                    var indianapolis = {lat: 39.79, lng: -86.14};
+                                    var uniminuto = {lat: 4.698488, lng: -74.089815};
+                                    var micasa = {lat: 4.691919, lng: -74.095337};
 
                                     var map = new google.maps.Map(document.getElementById('map'), {
-                                        center: chicago,
-                                        scrollwheel: false,
+                                        center: uniminuto,
+                                        scrollwheel: true,
                                         zoom: 7
                                     });
 
@@ -151,8 +151,8 @@
 
                                     // Set destination, origin and travel mode.
                                     var request = {
-                                        destination: indianapolis,
-                                        origin: chicago,
+                                        destination: micasa,
+                                        origin: uniminuto,
                                         travelMode: 'DRIVING'
                                     };
 
@@ -170,22 +170,22 @@
                             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                             async defer></script><br>
                             <input class="btn btn-default" type="button" value="Cambiar Información">
+                            <input class="btn btn-default" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios">
+
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-3 col-sm-6">
                         <div class="service-wrapper">
                             <i class="icon-user"></i>
                             <h3>Elimina tu cuenta</h3>
                             <p>Te iras para siempre de nuestra gran aplicación :(</p>
-                            <a href="#" class="btn icon-user icon-2x"> Eliminar Cuenta</a>
+                            <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal2"> Eliminar Cuenta</a>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
                         <div class="service-wrapper">
                             <i class="icon-user"></i>
                             <h3>Desactiva tu cuenta</h3>
                             <p>Solamente no apareceras en nuestra gran aplicación :/</p>
-                            <a href="#" class="btn icon-user icon-2x"> Desactivar Cuenta</a>
+                            <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal3"> Desactivar Cuenta</a>
                         </div>
                     </div>
                 </div>
@@ -212,6 +212,63 @@
                         <div class="footer-copyright">&copy; 2017</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Confirmación Registro</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Desea confirmar su registro con los siguientes datos?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Eliminar Cuenta</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Desea eliminar tu cuenta?</p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal3" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Desactivar Cuenta</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Desea desactivar su cuenta?</p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
             </div>
         </div>
 

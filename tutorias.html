@@ -118,13 +118,14 @@
                 <div id="map" style="width:300px; height:300px"></div>
                 <script>
                     function initMap() {
-                        var chicago = {lat: 41.85, lng: -87.65};
-                        var indianapolis = {lat: 39.79, lng: -86.14};
+                        var uniminuto = {lat: 4.698488, lng: -74.089815};
+                        var micasa = {lat: 4.691919, lng: -74.095337};
 
                         var map = new google.maps.Map(document.getElementById('map'), {
-                            center: chicago,
-                            scrollwheel: false,
-                            zoom: 7
+                            center: uniminuto,
+                            scrollwheel: true,
+                            zoom: 7,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
                         });
 
                         var directionsDisplay = new google.maps.DirectionsRenderer({
@@ -133,8 +134,8 @@
 
                         // Set destination, origin and travel mode.
                         var request = {
-                            destination: indianapolis,
-                            origin: chicago,
+                            destination: micasa,
+                            origin: uniminuto,
                             travelMode: 'DRIVING'
                         };
 
@@ -157,24 +158,22 @@
                     <h1>Busqueda de tutorias</h1>
                     <div class="col-md-6 col-sm-6">
                         <h1>Por hora</h1>
-                        <input class="form-control" type="text">    
-                    </div>
-                    <div class="col-md-6 col-sm-6">
+                        <input class="form-control" type="text">
                         <h1>Por precio</h1>
                         <input class="form-control" type="text">
-                    </div>
-                    <div class="col-md-6 col-sm-6">
                         <h1>Por ubicación</h1>
-                        <input class="form-control" type="text">    
+                        <input class="form-control" type="text">
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <h1>Por votos</h1>
                         <input class="form-control" type="text">
-                    </div>
-                    <div class="col-md-12 col-sm-6">
                         <h1>Busqueda Avanzada</h1>
                         <input class="form-control" type="text">
+                        <br>
+                        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">buscar</button>
+
                     </div>
+                    <br>
                 </div>
             </div>
         </div>

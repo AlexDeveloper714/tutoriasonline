@@ -29,6 +29,8 @@
 
 
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
 
     </head>
@@ -116,88 +118,98 @@
         <div class="section section-white">
             <div class="row">
                 <div class="col-md-12 col-sm-6">
-                    <div class="service-wrapper">
-                        <h1>Registro por formulario</h1>
-                        <div class="col-md-4 col-sm-6">
-                            <h2>Nombre:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Apellido:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Tipo de documento:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Número de Documento:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Telefono:</h2>
-                            <input class="form-control" type="text">    
+                    <form>
+                        <div class="service-wrapper">
+
+                            <h1>Registro por formulario</h1>
+                            <div class="col-md-4 col-sm-6">
+                                <h2>Nombre:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Apellido:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Tipo de documento:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Número de Documento:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Telefono:</h2>
+                                <input class="form-control" type="text">    
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <h2>Correo:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Nombre de Usuario:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Contraseña:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Repetir Contraseña:</h2>
+                                <input class="form-control" type="text">
+                                <h2>Tipo de usuario:</h2>
+                                <input class="form-control" type="text">
+
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <h1>Ubicación Google Maps</h1>
+                                <br><br>
+                                <div id="map" style="width:300px; height:300px"></div>
+                                <script>
+                                    function initMap() {
+                                        var uniminuto = {lat: 4.698488, lng: -74.089815};
+                                        var micasa = {lat: 4.691919, lng: -74.095337};
+
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            center: uniminuto,
+                                            scrollwheel: true,
+                                            zoom: 7
+                                        });
+
+                                        var directionsDisplay = new google.maps.DirectionsRenderer({
+                                            map: map
+                                        });
+
+                                        // Set destination, origin and travel mode.
+                                        var request = {
+                                            destination: micasa,
+                                            origin: uniminuto,
+                                            travelMode: 'DRIVING'
+                                        };
+
+                                        // Pass the directions request to the directions service.
+                                        var directionsService = new google.maps.DirectionsService();
+                                        directionsService.route(request, function (response, status) {
+                                            if (status == 'OK') {
+                                                // Display the route on the map.
+                                                directionsDisplay.setDirections(response);
+                                            }
+                                        });
+                                    }
+
+                                </script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                                async defer></script><br>
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>
+                                <br><br><div class="g-recaptcha" data-sitekey="6Ld3xxsUAAAAACt4vAxudeP10SOh610QowDDgayA"></div>
+
+                            </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <h2>Correo:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Nombre de Usuario:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Contraseña:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Repetir Contraseña:</h2>
-                            <input class="form-control" type="text">
-                            <h2>Tipo de usuario:</h2>
-                            <input class="form-control" type="text">
-                        </div>
-
-                        <div class="col-md-4 col-sm-6">
-                            <h1>Ubicación Google Maps</h1>
-                            <br><br>
-                            <div id="map" style="width:300px; height:300px"></div>
-                            <script>
-                                function initMap() {
-                                    var chicago = {lat: 41.85, lng: -87.65};
-                                    var indianapolis = {lat: 39.79, lng: -86.14};
-
-                                    var map = new google.maps.Map(document.getElementById('map'), {
-                                        center: chicago,
-                                        scrollwheel: false,
-                                        zoom: 7
-                                    });
-
-                                    var directionsDisplay = new google.maps.DirectionsRenderer({
-                                        map: map
-                                    });
-
-                                    // Set destination, origin and travel mode.
-                                    var request = {
-                                        destination: indianapolis,
-                                        origin: chicago,
-                                        travelMode: 'DRIVING'
-                                    };
-
-                                    // Pass the directions request to the directions service.
-                                    var directionsService = new google.maps.DirectionsService();
-                                    directionsService.route(request, function (response, status) {
-                                        if (status == 'OK') {
-                                            // Display the route on the map.
-                                            directionsDisplay.setDirections(response);
-                                        }
-                                    });
-                                }
-
-                            </script>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
-                            async defer></script>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-6">
-                    <div class="service-wrapper">
-                        <h1>Registro ONE-CLICK</h1>
-                        <div class="col-md-12 col-sm-6">
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-google-plus"></i></a>
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-facebook"></i></a>
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-twitter"></i></a>
-                            <a class="btn btn-social-icon btn-github"><i class="fa fa-twitch"></i></a>
-                            <br><br>
+                    <form>
+                        <div class="service-wrapper">
+                            <h1>Registro ONE-CLICK</h1>
+                            <div class="col-md-12 col-sm-6">
+                                <a class="btn btn-social-icon btn-github"><i class="fa fa-google-plus"></i></a>
+                                <a class="btn btn-social-icon btn-github"><i class="fa fa-facebook"></i></a>
+                                <a class="btn btn-social-icon btn-github"><i class="fa fa-twitter"></i></a>
+                                <a class="btn btn-social-icon btn-github"><i class="fa fa-twitch"></i></a>
+                                <br><br>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -228,7 +240,26 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Confirmación Registro</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Desea confirmar su registro con los siguientes datos?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    </div>
+                </div>
 
+            </div>
+        </div>
         <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/scrolling-nav.js"></script>		
