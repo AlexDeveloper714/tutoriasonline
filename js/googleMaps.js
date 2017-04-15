@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 function initMap() {
     var uniminuto = {lat: 4.698488, lng: -74.089815};
     var micasa = {lat: 4.691919, lng: -74.095337};
