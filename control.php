@@ -1,6 +1,7 @@
 <?php
 require_once 'database.php';
 $db2 = new database();
+
 if (isset($_POST['enviarCliente'])) {
     $db2->conectar();
     $foto = $_FILES["file"]["name"];

@@ -118,41 +118,39 @@
         <div class="section section-white">
             <div class="row">
                 <div class="col-md-12 col-sm-6">
-                    <form>
-                        <div class="service-wrapper">
-
-                            <h1>Registro por formulario</h1>
+                    <div class="service-wrapper">
+                        <h1>Registro por formulario</h1>
+                        <form  method="post" action="control.php">
                             <div class="col-md-4 col-sm-6">
                                 <h2>Nombre:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="nombre">
                                 <h2>Apellido:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="apellido">
                                 <h2>Tipo de documento:</h2>
-                                <select class="form-control">
+                                <select class="form-control" id="tipoDocumento">
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select>
                                 <h2>Número de Documento:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="number" id="documento">
                                 <h2>Telefono:</h2>
-                                <input class="form-control" type="text">    
+                                <input class="form-control" type="number" id="telefono">    
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Correo:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="correo">
                                 <h2>Nombre de Usuario:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="usuario">
                                 <h2>Contraseña:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="clave">
                                 <h2>Repetir Contraseña:</h2>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" id="rep_clave">
                                 <h2>Tipo de usuario:</h2>
-                                <select class="form-control">
+                                <select class="form-control" id="tipoUsuario">
                                     <option>Tutor</option>
                                     <option>Cliente</option>
                                 </select>
                             </div>
-
                             <div class="col-md-4 col-sm-6">
                                 <h1>Ubicación Google Maps</h1>
                                 <br><br>
@@ -164,8 +162,8 @@
                                 <br><br><div class="g-recaptcha" data-sitekey="6Ld3xxsUAAAAACt4vAxudeP10SOh610QowDDgayA"></div>
 
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -230,8 +228,7 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                     </div>
                 </div>
-
-            </div
+            </div>
         </div>
         <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>

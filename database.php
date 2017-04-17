@@ -12,7 +12,7 @@ class database {
         $this->usuario = "root";
         $this->password = "";
         $this->servidor = "localhost";
-        $this->nomDB = "adminbienes";
+        $this->nomDB = "tutorias";
         $this->link = "";
     }
 

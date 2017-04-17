@@ -116,44 +116,44 @@
         <div class="section section-white">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <h3>Modificar Informacion Personal</h3>
-                        <div class="service-wrapper">
-                            <h3>Nombre: </h3>
-                            <input class="form-control" type="text" disabled="">
-                            <h3>Apellido: </h3>
-                            <input class="form-control" type="text" disabled="">
-                            <h3>Edad: </h3>
-                            <input class="form-control" type="text" disabled="">
-                            <h3>Tipo de documento: </h3>
-                            <select class="form-control" disabled="">
-                                <option>Cedula de Ciudadania</option>
-                                <option>Tarjeta de Identidad</option>
-                            </select>                            
+                    <form  method="post" action="control.php">
+                        <div class="col-md-4 col-sm-6">
+                            <h3>Modificar Informacion Personal</h3>
+                            <div class="service-wrapper">
+                                <h3>Nombre: </h3>
+                                <input class="form-control" id="nombre" type="text" disabled="">
+                                <h3>Apellido: </h3>
+                                <input class="form-control" id="apellido" type="text" disabled="">
+                                <h3>Edad: </h3>
+                                <input class="form-control" id="edad" type="text" disabled="">
+                                <h3>Tipo de documento: </h3>
+                                <select class="form-control" id="tipoDocumento" disabled="">
+                                    <option>Cedula de Ciudadania</option>
+                                    <option>Tarjeta de Identidad</option>
+                                </select>                            
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-wrapper">
-                            <h3>Número de documento: </h3>
-                            <input class="form-control" type="number" disabled="">
-                            <h3>Número de documento: </h3>
-                            <input class="form-control" type="text" disabled="">
-                            <br>
-                            <h3>Tipo de usuario: </h3>
-                            <select class="form-control" disabled="">
-                                <option>Tutor</option>
-                                <option>Cliente</option>
-                            </select>
-                            <h3>Ubicación</h3>
-                            <div id="map" style="width:300px; height:300px"></div>
-                            <script src="js/googleMaps.js"></script>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
-                            async defer></script><br>
-                            <input class="btn btn-default" type="button" value="Cambiar Información">
-                            <input class="btn btn-default" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-wrapper">
+                                <h3>Número de documento: </h3>
+                                <input class="form-control" id="documento" type="number" disabled="">
+                                <br>
+                                <h3>Tipo de usuario: </h3>
+                                <select class="form-control"  id="tipoUsuario" disabled="">
+                                    <option>Tutor</option>
+                                    <option>Cliente</option>
+                                </select>
+                                <h3>Ubicación</h3>
+                                <div id="map" style="width:300px; height:300px"></div>
+                                <script src="js/googleMaps.js"></script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                                async defer></script><br>
+                                <input class="btn btn-default" type="button" value="Cambiar Información">
+                                <input class="btn btn-default" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios">
 
+                            </div>
                         </div>
-                    </div>
+                    </form>
                     <div class="col-md-3 col-sm-6">
                         <div class="service-wrapper">
                             <i class="icon-user"></i>

@@ -120,34 +120,36 @@
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                 async defer></script>
             </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="service-wrapper">
-                    <h1>Busqueda de tutorias</h1>
-                    <div class="col-md-6 col-sm-6">
-                        <h1>Por hora</h1>
-                        <input class="form-control" type="text">
-                        <h1>Por precio</h1>
-                        <input class="form-control" type="text">
-                        <h1>Por ubicación</h1>
-                        <input class="form-control" type="text">
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <h1>Por votos</h1>
-                        <input class="form-control" type="text">
-                        <h1>Busqueda Avanzada</h1>
-                        <select class="form-control">
-                            <option>Por hora</option>
-                            <option>Por materia</option>
-                            <option>Por ubicación</option>
-                            <option>Por precio</option>
-                            <option>Por votos</option>
-                        </select>                        <br>
-                        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">buscar</button>
+            <form  method="post" action="control.php">
+                <div class="col-md-6 col-sm-6">
+                    <div class="service-wrapper">
+                        <h1>Busqueda de tutorias</h1>
+                        <div class="col-md-6 col-sm-6">
+                            <h1>Por hora</h1>
+                            <input class="form-control" type="text" id="hora">
+                            <h1>Por precio</h1>
+                            <input class="form-control" type="text" id="precio">
+                            <h1>Por ubicación</h1>
+                            <input class="form-control" type="text" id="ubicacion">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <h1>Por votos</h1>
+                            <input class="form-control" type="text" id="filtro">
+                            <h1>Busqueda Avanzada</h1>
+                            <select class="form-control">
+                                <option>Por hora</option>
+                                <option>Por materia</option>
+                                <option>Por ubicación</option>
+                                <option>Por precio</option>
+                                <option>Por votos</option>
+                            </select>                        <br>
+                            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">buscar</button>
 
+                        </div>
+                        <br>
                     </div>
-                    <br>
                 </div>
-            </div>
+            </form>
         </div>
         <hr>
         <!-- Footer -->
