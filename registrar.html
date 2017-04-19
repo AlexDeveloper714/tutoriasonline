@@ -6,33 +6,23 @@
 <html lang="en">
 
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <title>Registro tutorias</title>
-
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
-
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/main.css">
         <link href="css/custom.css" rel="stylesheet">
-
         <!-- Custom Fonts & Icons -->
         <link rel="stylesheet" href="css/icomoon-social.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/sb-admin-2.css" type="text/css"/>
-
-
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
-
-
-
     </head>
 
     <body>
@@ -117,36 +107,36 @@
         </div>
         <div class="section section-white">
             <div class="row">
-                <div class="col-md-12 col-sm-6">
-                    <div class="service-wrapper">
-                        <h1>Registro por formulario</h1>
-                        <form  method="post" action="control.php">
+                <form  method="post" action="control.php">
+                    <div class="col-md-12 col-sm-6">
+                        <div class="service-wrapper">
+                            <h1>Registro por formulario</h1>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Nombre:</h2>
-                                <input class="form-control" type="text" id="nombre">
+                                <input class="form-control" type="text" id="nombre" required>
                                 <h2>Apellido:</h2>
-                                <input class="form-control" type="text" id="apellido">
+                                <input class="form-control" type="text" id="apellido" required>
                                 <h2>Tipo de documento:</h2>
-                                <select class="form-control" id="tipoDocumento">
+                                <select class="form-control" id="tipoDocumento" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select>
                                 <h2>Número de Documento:</h2>
-                                <input class="form-control" type="number" id="documento">
+                                <input class="form-control" type="number" id="documento" required>
                                 <h2>Telefono:</h2>
-                                <input class="form-control" type="number" id="telefono">    
+                                <input class="form-control" type="number" id="telefono" required>    
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Correo:</h2>
-                                <input class="form-control" type="text" id="correo">
+                                <input class="form-control" type="text" id="correo" required>
                                 <h2>Nombre de Usuario:</h2>
-                                <input class="form-control" type="text" id="usuario">
+                                <input class="form-control" type="text" id="usuario" required>
                                 <h2>Contraseña:</h2>
-                                <input class="form-control" type="text" id="clave">
+                                <input class="form-control" type="text" id="clave" required>
                                 <h2>Repetir Contraseña:</h2>
-                                <input class="form-control" type="text" id="rep_clave">
+                                <input class="form-control" type="text" id="rep_clave" required>
                                 <h2>Tipo de usuario:</h2>
-                                <select class="form-control" id="tipoUsuario">
+                                <select class="form-control" id="tipoCliente" required>
                                     <option>Tutor</option>
                                     <option>Cliente</option>
                                 </select>
@@ -158,15 +148,16 @@
                                 <script src="js/googleMaps.js"></script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                                 async defer></script><br>
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>
+                                <button type="submit" class="btn btn-info btn-lg" id="enviarCliente">Registrarse</button>
+                                <!--
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>     
+                                -->
                                 <br><br><div class="g-recaptcha" data-sitekey="6Ld3xxsUAAAAACt4vAxudeP10SOh610QowDDgayA"></div>
-
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
+                </form>
+
                 <div class="col-md-12 col-sm-6">
                     <form>
                         <div class="service-wrapper">
@@ -180,7 +171,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -206,11 +196,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -224,12 +209,17 @@
                         <p>Desea confirmar su registro con los siguientes datos?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                        <button type="submit" class="btn btn-default" data-toggle="modal" id="enviarCliente">Si</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Javascripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/bootstrap.min.js"></script>
+
         <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/scrolling-nav.js"></script>		
