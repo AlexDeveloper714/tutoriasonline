@@ -47,56 +47,56 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Basica"></a>
+                    <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="Basica"></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Inicio</a></li>                      
+                        <li class="active"><a href="index.php">Inicio</a></li>                      
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="ingresar.html">Por formulario</a></li>
-                                <li><a href="ingresar.html">Ingreso ONE-CLICK</a></li>
+                                <li><a href="ingresar.php">Por formulario</a></li>
+                                <li><a href="ingresar.php">Ingreso ONE-CLICK</a></li>
                             </ul>
                         </li>  <!--Falta Desarrollarlo :P-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="registrar.html">Por formulario</a></li>
-                                <li><a href="registrar.html">Registro ONE-CLICK</a></li>
+                                <li><a href="registrar.php">Por formulario</a></li>
+                                <li><a href="registrar.php">Registro ONE-CLICK</a></li>
                             </ul>
                         </li>  <!--Falta Desarrollarlo :P-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="tutorias.html">Por hora</a></li>
-                                <li><a href="tutorias.html">Por precio</a></li>
-                                <li><a href="tutorias.html">Por votos</a></li>
-                                <li><a href="tutorias.html">Por ubicación</a></li>
-                                <li><a href="tutorias.html">Busqueda Avanzada</a></li>
+                                <li><a href="tutorias.php">Por hora</a></li>
+                                <li><a href="tutorias.php">Por precio</a></li>
+                                <li><a href="tutorias.php">Por votos</a></li>
+                                <li><a href="tutorias.php">Por ubicación</a></li>
+                                <li><a href="tutorias.php">Busqueda Avanzada</a></li>
                             </ul>
                         </li> <!--Falta Desarrollarlo :P-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi perfil <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="perfil.html">Eliminar Cuenta</a></li>
-                                <li><a href="perfil.html">Desactivar Cuenta</a></li>
-                                <li><a href="perfil.html">Modificar información personal</a></li>
+                                <li><a href="perfil.php">Eliminar Cuenta</a></li>
+                                <li><a href="perfil.php">Desactivar Cuenta</a></li>
+                                <li><a href="perfil.php">Modificar información personal</a></li>
                             </ul>
                         </li> <!--Falta Desarrollarlo :P-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="soporte.html">Via Chat</a></li>
-                                <li><a href="soporte.html">Via Email</a></li>
+                                <li><a href="soporte.php">Via Chat</a></li>
+                                <li><a href="soporte.php">Via Email</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acerca de <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="acerca_de.html">Sobre la empresa</a></li>
-                                <li><a href="acerca_de.html">Origen página</a></li>
-                                <li><a href="acerca_de.html">Objetivos Pagina</a></li>
+                                <li><a href="acerca_de.php">Sobre la empresa</a></li>
+                                <li><a href="acerca_de.php">Origen página</a></li>
+                                <li><a href="acerca_de.php">Objetivos Pagina</a></li>
                             </ul>
                         </li>
                     </ul>

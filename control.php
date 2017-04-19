@@ -1,4 +1,5 @@
 <?php
+
 require_once 'database.php';
 $db2 = new database();
 
@@ -13,10 +14,11 @@ if (isset($_POST['enviarCliente'])) {
        </script>";
         exit;
     } else {
-        $db2->insertar(array(0,$_POST ['nombre'], $_POST['apellido'], $_POST['tipoDocumento'],
-            $_POST['documento'], $_POST ['correo'], "Andes", $_POST['telefono'],$_POST['tipoCliente'],"","ACTIVO"), "clientes");
-        require 'index.html';
+        $db2->insertar(array(0, $_POST ['nombre'], $_POST['apellido'], $_POST['tipoDocumento'],
+            $_POST['documento'], $_POST ['correo'], "Andes", $_POST['telefono'], $_POST['tipoCliente'], "", "ACTIVO"), "clientes");
     }
+    require 'index.php';
+//    header("Location: index.html?id_Cliente=" . $_POST['cedula']);
 }
 
 if (isset($_POST['enviarActivo'])) {
