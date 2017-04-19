@@ -32,7 +32,7 @@ class database {
 
     function verificarIdClientes($idCliente, $tabla = "") {
         $existe = false;
-        $query="select id_cliente from ".$tabla." where id_cliente=".$idCliente;
+        $query="select id_cliente from ".$tabla." where documento=".$idCliente;
         $existe=mysql_query($query);
         return $existe;
     }
