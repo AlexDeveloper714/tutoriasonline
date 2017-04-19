@@ -5,7 +5,7 @@ $db2 = new database();
 
 if (isset($_POST['enviarCliente'])) {
     $db2->conectar();
-    if ($db2->verificarIdClientes($_POST ['cedula'], "clientes")) {
+    if ($db2->verificarIdClientes($_POST ['documento'], "clientes")) {
         echo "<h1>
            Cedula ya registrada, retrocediendo...
        </h1>";
@@ -18,7 +18,7 @@ if (isset($_POST['enviarCliente'])) {
             $_POST['documento'], $_POST ['correo'], "Andes", $_POST['telefono'], $_POST['tipoCliente'], "", "ACTIVO"), "clientes");
     }
     require 'index.php';
-//    header("Location: index.html?id_Cliente=" . $_POST['cedula']);
+//    header("Location: index.php?id_Cliente=" . $_POST['cedula']);
 }
 
 if (isset($_POST['enviarActivo'])) {
