@@ -29,7 +29,9 @@
 
 
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/jquery.min.js"></script>
 
+        <script src="js/accionesTutorias.js"></script>
 
     </head>
 
@@ -148,8 +150,8 @@
                                 <script src="js/googleMaps.js"></script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                                 async defer></script><br>
-                                <input class="btn btn-default" type="button" value="Cambiar Información">
-                                <input class="btn btn-default" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios">
+                                <input class="btn btn-default" type="button" id="cambiarInfo" value="Cambiar Información">
+                                <input class="btn btn-default" id="hacerCambios" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios" disabled="">
 
                             </div>
                         </div>
