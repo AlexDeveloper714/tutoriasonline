@@ -2,23 +2,30 @@
 
 require_once 'database.php';
 $db2 = new database();
-
 if (isset($_POST['enviarCliente'])) {
     $db2->conectar();
-    if ($db2->verificarIdClientes($_POST ['documento'], "clientes")) {
-        echo "<h1>
-           Cedula ya registrada, retrocediendo...
-       </h1>";
-        echo "<script type=\"text/javascript\">
-            setTimeout(function(){ history.go(-1); },500);
-       </script>";
-        exit;
-    } else {
-        $db2->insertar(array(0, $_POST ['nombre'], $_POST['apellido'], $_POST['tipoDocumento'],
-            $_POST['documento'], $_POST ['correo'], "Andes", $_POST['telefono'], $_POST['tipoCliente'], "", "ACTIVO"), "clientes");
-    }
+    $foto = $_FILES["file"]["name"];
+    $trozos = explode(".", $foto);
+    $exten = $_POST ['cedula'] . "." . end($trozos);
+    $ruta = $_FILES["file"]["tmp_name"];
+    $destino = "img/" . $foto;
+    $destino2 = "img/" . $exten;
+    copy($ruta, $destino);
+    rename($destino, $destino2);
+//    if ($db2->verificarIdClientes($_POST ['cedula'], "clientes")) {
+//        echo "<h1>
+//           Cedula ya registrada, retrocediendo...
+//       </h1>";
+//        echo "<script type=\"text/javascript\">
+//            setTimeout(function(){ history.go(-1); },500);
+//       </script>";
+//        exit;
+//    } else {
+//        
+//    }
+    $db2->insertar(array($_POST ['cedula'], $_POST['nombre'], $_POST['apellido'],
+        $_POST['genero'], $_POST ['fecha'], $_POST['correo'], $_POST['hijos'], $destino2), "clientes");
     require 'index.php';
-//    header("Location: index.php?id_Cliente=" . $_POST['cedula']);
 }
 
 if (isset($_POST['enviarActivo'])) {
