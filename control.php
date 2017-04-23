@@ -2,6 +2,7 @@
 
 require_once 'database.php';
 $db2 = new database();
+
 if (isset($_POST['enviarCliente'])) {
     $db2->conectar();    
     if ($db2->verificarIdClientes($_POST ['documento'], "clientes") > 0) {

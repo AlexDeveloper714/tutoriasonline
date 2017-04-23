@@ -29,7 +29,6 @@ class database {
         }
         $valoresFila = substr($valoresFila, 0, -2);
         mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_error($this->link));
-        return $valoresFila;
     }
 
     function verificarIdClientes($documento, $tabla = "") {
