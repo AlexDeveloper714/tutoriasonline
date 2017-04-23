@@ -120,6 +120,7 @@
                 <div class="row">
                     <form  method="post" action="control.php">
                         <div class="col-md-4 col-sm-6">
+
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
                                 <h3>Nombre: </h3>
@@ -152,6 +153,27 @@
                                 async defer></script><br>
                                 <input class="btn btn-default" type="button" id="cambiarInfo" value="Cambiar Información">
                                 <input class="btn btn-default" id="hacerCambios" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios" disabled="">
+                                </fieldset>
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Confirmación Registro</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Desea confirmar su registro con los siguientes datos?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -209,26 +231,6 @@
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Confirmación Registro</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Desea confirmar su registro con los siguientes datos?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
         <div class="modal fade" id="myModal2" role="dialog">
             <div class="modal-dialog">
