@@ -101,7 +101,7 @@
                 </div>
             </div>
         </header><!--/header-->
-        
+
         <!-- Page Title -->
         <div class="section section-breadcrumbs">
             <div class="container">
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
- <!-- Footer -->
+        <!-- Footer -->
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -151,8 +151,7 @@
         </div>
 
         <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
         <!-- Scrolling Nav JavaScript -->
