@@ -12,7 +12,7 @@ class database {
         $this->usuario = "root";
         $this->password = "";
         $this->servidor = "localhost";
-        $this->nomDB = "adminbienes";
+        $this->nomDB = "tutorias";
         $this->link = "";
     }
 
@@ -28,11 +28,12 @@ class database {
             echo $key;
         }
         $valoresFila = substr($valoresFila, 0, -2);
-        mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_errno($this->link));
+        mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_error($this->link));
+        return $valoresFila;
     }
 
-    function verificarIdClientes($idCliente, $tabla = "") {
-        $query = "select id_cliente from " . $tabla . " where id_cliente=" . $idCliente;
+    function verificarIdClientes($documento, $tabla = "") {
+        $query = "select documento from " . $tabla . " where documento=" . $documento;
         $existe = mysqli_query($this->link, $query);
         $cantidad = mysqli_num_rows($existe);
         return $cantidad;

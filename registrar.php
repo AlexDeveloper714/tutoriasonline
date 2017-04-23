@@ -134,13 +134,32 @@
                                 <h2>Nombre de Usuario:</h2>
                                 <input class="form-control" type="text" id="usuario" required>
                                 <h2>Contraseña:</h2>
-                                <input class="form-control" type="text" id="clave" required>
+                                <input class="form-control" type="password" id="clave" required>
                                 <h2>Repetir Contraseña:</h2>
-                                <input class="form-control" type="text" id="rep_clave" required>
+                                <input class="form-control" type="password" id="rep_clave" required>
                                 <h2>Tipo de usuario:</h2>
                                 <select class="form-control" id="tipoCliente" required>
                                     <option>Tutor</option>
                                     <option>Cliente</option>
+                                </select>
+                                <div class="checkbox col-xs-4">
+                                    <label>
+                                        <input type="checkbox" value="">Ver pasaword
+                                    </label>
+                                </div>
+                                <h2>Universidad:</h2>
+                                <select id="universidad"class="form-control" required>
+                                    <?php
+                                    require_once 'database.php';
+                                    $db = new database();
+                                    $db->conectar();
+                                    $res = $db->consultarDB("universidades", "nombreUniversidad");
+                                    while ($row = mysqli_fetch_array($res)) {
+                                        echo '<option>';
+                                        echo $row['nombreUniversidad'];
+                                        echo '</option>';
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-md-4 col-sm-6">

@@ -3,16 +3,8 @@
 require_once 'database.php';
 $db2 = new database();
 if (isset($_POST['enviarCliente'])) {
-    $db2->conectar();
-    $foto = $_FILES["file"]["name"];
-    $trozos = explode(".", $foto);
-    $exten = $_POST ['cedula'] . "." . end($trozos);
-    $ruta = $_FILES["file"]["tmp_name"];
-    $destino = "img/" . $foto;
-    $destino2 = "img/" . $exten;
-    copy($ruta, $destino);
-    rename($destino, $destino2);
-    if ($db2->verificarIdClientes($_POST ['cedula'], "clientes") > 0) {
+    $db2->conectar();    
+    if ($db2->verificarIdClientes($_POST ['documento'], "clientes") > 0) {
         echo "<h1>
            Cedula ya registrada, retrocediendo...
        </h1>";
@@ -21,8 +13,10 @@ if (isset($_POST['enviarCliente'])) {
        </script>";
         exit;
     } else {
-        $db2->insertar(array($_POST ['cedula'], $_POST['nombre'], $_POST['apellido'],
-            $_POST['genero'], $_POST ['fecha'], $_POST['correo'], $_POST['hijos'], $destino2), "clientes");
+        echo $db2->insertar(array(0,$_POST ['nombre'], $_POST['apellido'], $_POST['tipoDocumento'],
+            $_POST['documento'], $_POST ['correo'], $_POST['universidad']
+            , $_POST['telefono'], $_POST ['tipoCliente']
+            ,$_POST['usuario'], "ACTIVO",$_POST['clave']), "clientes");
         require 'index.php';
     }
 }
