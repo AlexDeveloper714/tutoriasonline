@@ -248,10 +248,9 @@
             </div>
         </div>
 
+        <!-- Scrolling Nav JavaScript -->
         <!-- Javascripts -->
         <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/scrolling-nav.js"></script>		
         <script src="js/jquery.dataTables.min.js"></script>

@@ -1,4 +1,3 @@
-
 function formCliente() {
     $('#cambiarInfo').click(
             function () {
