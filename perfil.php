@@ -120,17 +120,16 @@
                 <div class="row">
                     <form  method="post" action="control.php">
                         <div class="col-md-4 col-sm-6">
-
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
                                 <h3>Nombre: </h3>
-                                <input class="form-control" id="nombre" type="text" disabled="">
+                                <input class="form-control" id="nombre" type="text" disabled="" required>
                                 <h3>Apellido: </h3>
-                                <input class="form-control" id="apellido" type="text" disabled="">
+                                <input class="form-control" id="apellido" type="text" disabled="" required>
                                 <h3>Edad: </h3>
-                                <input class="form-control" id="edad" type="text" disabled="">
+                                <input class="form-control" id="edad" type="text" disabled="" required>
                                 <h3>Tipo de documento: </h3>
-                                <select class="form-control" id="tipoDocumento" disabled="">
+                                <select class="form-control" id="tipoDocumento" disabled="" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select>                            
@@ -139,10 +138,10 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="service-wrapper">
                                 <h3>Número de documento: </h3>
-                                <input class="form-control" id="documento" type="number" disabled="">
+                                <input class="form-control" id="documento" type="number" disabled="" required>
                                 <br>
                                 <h3>Tipo de usuario: </h3>
-                                <select class="form-control"  id="tipoUsuario" disabled="">
+                                <select class="form-control"  id="tipoUsuario" disabled="" required>
                                     <option>Tutor</option>
                                     <option>Cliente</option>
                                 </select>
@@ -152,29 +151,7 @@
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                                 async defer></script><br>
                                 <input class="btn btn-default" type="button" id="cambiarInfo" value="Cambiar Información">
-                                <input class="btn btn-default" id="hacerCambios" data-toggle="modal" data-target="#myModal" type="button" value="Aplicar Cambios" disabled="">
-                                </fieldset>
-                                <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Confirmación Registro</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>Desea confirmar su registro con los siguientes datos?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
+                                <input class="btn btn-default" id="hacerCambios" type="submit" value="Aplicar Cambios" disabled="">
                             </div>
                         </div>
                     </form>
