@@ -26,9 +26,8 @@
         <link rel="stylesheet" href="css/icomoon-social.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/sb-admin-2.css" type="text/css"/>
-
-
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/jquery.min.js"></script>
 
 
     </head>
@@ -223,7 +222,6 @@
 
         <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>
-        <script src="js/scrolling-nav.js"></script>		
 
     </body>
 </html>

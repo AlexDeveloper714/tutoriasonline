@@ -22,7 +22,6 @@
         <link rel="stylesheet" href="css/main.css">
         <link href="css/custom.css" rel="stylesheet">
 
-        <!--<script src="//use.edgefonts.net/bebas-neue.js"></script>-->
 
         <!-- Custom Fonts & Icons -->
         <link rel="stylesheet" href="css/icomoon-social.css">
@@ -31,6 +30,7 @@
 
 
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/jquery.min.js"></script>
 
 
     </head>
