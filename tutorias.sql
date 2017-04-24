@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2017 a las 18:12:28
--- Versión del servidor: 10.1.19-MariaDB
--- Versión de PHP: 5.6.28
+-- Tiempo de generación: 24-04-2017 a las 16:49:42
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -36,20 +38,9 @@ CREATE TABLE `clientes` (
   `universidad` varchar(200) NOT NULL,
   `telefono` varchar(200) NOT NULL,
   `tipoCliente` varchar(200) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
-  `estadoUsuario` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `clientes-examenes`
---
-
-CREATE TABLE `clientes-examenes` (
-  `idCliente` int(20) NOT NULL,
-  `idExamen` int(20) NOT NULL,
-  `materia` varchar(200) NOT NULL
+  `usuario` varchar(200) NOT NULL,
+  `estadoUsuario` varchar(200) NOT NULL,
+  `clave` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,15 +59,13 @@ CREATE TABLE `clientes-tutorias` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `examenes`
+-- Estructura de tabla para la tabla `clientes-universidades`
 --
 
-CREATE TABLE `examenes` (
-  `idExamen` int(20) NOT NULL,
-  `materia` varchar(200) NOT NULL,
-  `pregunta` varchar(200) NOT NULL,
-  `respuesta` varchar(200) NOT NULL,
-  `dificultad` varchar(200) NOT NULL
+CREATE TABLE `clientes-universidades` (
+  `idCliente` int(20) NOT NULL,
+  `idUniversidad` int(20) NOT NULL,
+  `materia` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -113,6 +102,24 @@ CREATE TABLE `tutorias` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `universidades`
+--
+
+CREATE TABLE `universidades` (
+  `idUniversidad` int(20) NOT NULL,
+  `nombreUniversidad` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `universidades`
+--
+
+INSERT INTO `universidades` (`idUniversidad`, `nombreUniversidad`) VALUES
+(1, 'ANDES');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `ventas`
 --
 
@@ -136,13 +143,6 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`idCliente`);
 
 --
--- Indices de la tabla `clientes-examenes`
---
-ALTER TABLE `clientes-examenes`
-  ADD KEY `idCliente` (`idCliente`),
-  ADD KEY `idExamen` (`idExamen`);
-
---
 -- Indices de la tabla `clientes-tutorias`
 --
 ALTER TABLE `clientes-tutorias`
@@ -150,10 +150,11 @@ ALTER TABLE `clientes-tutorias`
   ADD KEY `idTutoria` (`idTutoria`);
 
 --
--- Indices de la tabla `examenes`
+-- Indices de la tabla `clientes-universidades`
 --
-ALTER TABLE `examenes`
-  ADD PRIMARY KEY (`idExamen`);
+ALTER TABLE `clientes-universidades`
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idUniversidad` (`idUniversidad`) USING BTREE;
 
 --
 -- Indices de la tabla `soportes`
@@ -167,6 +168,12 @@ ALTER TABLE `soportes`
 --
 ALTER TABLE `tutorias`
   ADD PRIMARY KEY (`idTutorias`);
+
+--
+-- Indices de la tabla `universidades`
+--
+ALTER TABLE `universidades`
+  ADD PRIMARY KEY (`idUniversidad`);
 
 --
 -- Indices de la tabla `ventas`
@@ -185,11 +192,6 @@ ALTER TABLE `ventas`
 ALTER TABLE `clientes`
   MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `examenes`
---
-ALTER TABLE `examenes`
-  MODIFY `idExamen` int(20) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `soportes`
 --
 ALTER TABLE `soportes`
@@ -200,6 +202,11 @@ ALTER TABLE `soportes`
 ALTER TABLE `tutorias`
   MODIFY `idTutorias` int(20) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `universidades`
+--
+ALTER TABLE `universidades`
+  MODIFY `idUniversidad` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
@@ -209,18 +216,18 @@ ALTER TABLE `ventas`
 --
 
 --
--- Filtros para la tabla `clientes-examenes`
---
-ALTER TABLE `clientes-examenes`
-  ADD CONSTRAINT `clientes-examenes_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`),
-  ADD CONSTRAINT `clientes-examenes_ibfk_2` FOREIGN KEY (`idExamen`) REFERENCES `examenes` (`idExamen`);
-
---
 -- Filtros para la tabla `clientes-tutorias`
 --
 ALTER TABLE `clientes-tutorias`
   ADD CONSTRAINT `clientes-tutorias_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`),
   ADD CONSTRAINT `clientes-tutorias_ibfk_2` FOREIGN KEY (`idTutoria`) REFERENCES `tutorias` (`idTutorias`);
+
+--
+-- Filtros para la tabla `clientes-universidades`
+--
+ALTER TABLE `clientes-universidades`
+  ADD CONSTRAINT `clientes-universidades_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`),
+  ADD CONSTRAINT `clientes-universidades_ibfk_2` FOREIGN KEY (`idUniversidad`) REFERENCES `universidades` (`idUniversidad`);
 
 --
 -- Filtros para la tabla `soportes`
@@ -233,6 +240,7 @@ ALTER TABLE `soportes`
 --
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

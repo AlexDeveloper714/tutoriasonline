@@ -180,7 +180,6 @@
                 </form>
 
                 <div class="col-md-12 col-sm-6">
-                    <form>
                         <div class="service-wrapper">
                             <h1>Registro ONE-CLICK</h1>
                             <div class="col-md-12 col-sm-6">
@@ -191,7 +190,6 @@
                                 <br><br>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
