@@ -4,7 +4,7 @@ require_once 'database.php';
 $db2 = new database();
 
 if (isset($_POST['enviarCliente'])) {
-    $db2->conectar();    
+    echo $db2->conectar();    
     if ($db2->verificarIdClientes($_POST ['documento'], "clientes") > 0) {
         echo "<h1>
            Cedula ya registrada, retrocediendo...
@@ -18,8 +18,8 @@ if (isset($_POST['enviarCliente'])) {
             $_POST['documento'], $_POST ['correo'], $_POST['universidad']
             , $_POST['telefono'], $_POST ['tipoCliente']
             ,$_POST['usuario'], "ACTIVO",$_POST['clave']), "clientes");
-        require 'index.php';
     }
+	require 'index.php';
 }
 
 if (isset($_POST['enviarActivo'])) {

@@ -1,4 +1,5 @@
 function formCliente() {
+//    $('#map').hide();
     $('#cambiarInfo').click(
             function () {
                 $('#nombre').removeAttr("disabled").focus();
@@ -7,7 +8,8 @@ function formCliente() {
                 $('#documento').removeAttr("disabled").focus();
                 $('#tipoUsuario').removeAttr("disabled").focus();
                 $('#edad').removeAttr("disabled").focus();
-                 $('#hacerCambios').removeAttr("disabled").focus();
+                $('#hacerCambios').removeAttr("disabled").focus();
+                $('#map').show();
             }
     );
     $('#dataTables-example').DataTable({

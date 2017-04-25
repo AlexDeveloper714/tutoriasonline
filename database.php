@@ -19,6 +19,7 @@ class database {
     function conectar() {
         $this->link = mysqli_connect($this->servidor, $this->usuario, $this->password);
         mysqli_select_db($this->link, $this->nomDB);
+		return $this->link;
     }
 
     function insertar($fila = array(), $tabla = "") {
