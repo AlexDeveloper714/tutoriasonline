@@ -59,14 +59,14 @@
                                 <li><a href="ingresar.php">Por formulario</a></li>
                                 <li><a href="ingresar.php">Ingreso ONE-CLICK</a></li>
                             </ul>
-                        </li>  <!--Falta Desarrollarlo :P-->
+                        </li>  
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="registrar.php">Por formulario</a></li>
                                 <li><a href="registrar.php">Registro ONE-CLICK</a></li>
                             </ul>
-                        </li>  <!--Falta Desarrollarlo :P-->
+                        </li>  
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -76,7 +76,7 @@
                                 <li><a href="tutorias.php">Por ubicación</a></li>
                                 <li><a href="tutorias.php">Busqueda Avanzada</a></li>
                             </ul>
-                        </li> <!--Falta Desarrollarlo :P-->
+                        </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi perfil <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -84,7 +84,7 @@
                                 <li><a href="perfil.php">Desactivar Cuenta</a></li>
                                 <li><a href="perfil.php">Modificar información personal</a></li>
                             </ul>
-                        </li> <!--Falta Desarrollarlo :P-->
+                        </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">

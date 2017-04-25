@@ -1,5 +1,5 @@
 function formCliente() {
-//    $('#map').hide();
+    $('#tutorias').hide();
     $('#cambiarInfo').click(
             function () {
                 $('#nombre').removeAttr("disabled").focus();
