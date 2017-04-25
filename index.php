@@ -64,7 +64,7 @@
                                 <li><a href="registrar.php">Registro ONE-CLICK</a></li>
                             </ul>
                         </li>  
-                        <li class="dropdown" id="tutorias">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                                >Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
