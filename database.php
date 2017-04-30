@@ -52,7 +52,7 @@ class database {
                 break;
             case "SELECT":
                 $valoresFila = "";
-
+                
                 //select campos from tabla where idcampo=dato (opcional)and
                 break;
             case "UPDATE":
