@@ -24,7 +24,7 @@
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="js/jquery.min.js"></script>
-
+        <script src="js/accionesTutorias.js"></script>
     </head>
 
     <body>
