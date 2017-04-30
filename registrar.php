@@ -115,30 +115,30 @@
                             <h1>Registro por formulario</h1>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Nombre:</h2>
-                                <input class="form-control" type="text" id="nombre" required>
+                                <input class="form-control" type="text" name="nombre" required>
                                 <h2>Apellido:</h2>
-                                <input class="form-control" type="text" id="apellido" required>
+                                <input class="form-control" type="text" name="apellido" required>
                                 <h2>Tipo de documento:</h2>
-                                <select class="form-control" id="tipoDocumento" required>
+                                <select class="form-control" name="tipoDocumento" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select>
                                 <h2>Número de Documento:</h2>
-                                <input class="form-control" type="number" id="documento" required>
+                                <input class="form-control" type="number" name="documento" required>
                                 <h2>Telefono:</h2>
-                                <input class="form-control" type="number" id="telefono" required>    
+                                <input class="form-control" type="number" name="telefono" required>    
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Correo:</h2>
-                                <input class="form-control" type="text" id="correo" required>
+                                <input class="form-control" type="text" name="correo" required>
                                 <h2>Nombre de Usuario:</h2>
-                                <input class="form-control" type="text" id="usuario" required>
+                                <input class="form-control" type="text" name="usuario" required>
                                 <h2>Contraseña:</h2>
-                                <input class="form-control" type="password" id="clave" required>
+                                <input class="form-control" type="password" name="clave" required>
                                 <h2>Repetir Contraseña:</h2>
-                                <input class="form-control" type="password" id="rep_clave" required>
+                                <input class="form-control" type="password" name="rep_clave" required>
                                 <h2>Tipo de usuario:</h2>
-                                <select class="form-control" id="tipoCliente" required>
+                                <select class="form-control" name="tipoCliente" required>
                                     <option>Tutor</option>
                                     <option>Cliente</option>
                                 </select>
@@ -148,7 +148,7 @@
                                     </label>
                                 </div>
                                 <h2>Universidad:</h2>
-                                <select id="universidad"class="form-control" required>
+                                <select name="universidad"class="form-control" required>
                                     <?php
                                     require_once 'database.php';
                                     $db = new database();
@@ -169,7 +169,7 @@
                                 <script src="js/googleMaps.js"></script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                                 async defer></script><br>
-                                <button type="submit" class="btn btn-info btn-lg" id="enviarCliente">Registrarse</button>
+                                <button type="submit" class="btn btn-info btn-lg" name="enviarCliente">Registrarse</button>
                                 <!--
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>     
                                 -->
