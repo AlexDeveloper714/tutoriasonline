@@ -1,5 +1,4 @@
 <?php
-
 require_once 'database.php';
 $db2 = new database();
 
