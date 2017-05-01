@@ -16,13 +16,13 @@ class database {
         $this->link = "";
     }
 
-    function conectar() {
+    function conectarDB() {
         $this->link = mysqli_connect($this->servidor, $this->usuario, $this->password);
         mysqli_select_db($this->link, $this->nomDB);
         return mysqli_select_db($this->link, $this->nomDB);
     }
 
-    function insertar($fila = array(), $tabla = "") {
+    function insertarDatos($fila = array(), $tabla = "") {
         $valoresFila = "";
         while (list($key, $val) = each($fila)) {
             $valoresFila = $valoresFila . " '" . $val . "', ";
@@ -32,32 +32,11 @@ class database {
         mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_error($this->link));
     }
 
-    function verificarIdClientes($documento, $tabla = "") {
+    function verificarClientes($documento, $tabla = "") {
         $query = "select documento from " . $tabla . " where documento=" . $documento;
         $existe = mysqli_query($this->link, $query);
         $cantidad = mysqli_num_rows($existe);
         return $cantidad;
-    }
-
-    function crudSQL($fila = array(), $tabla = "", $opcion = "") {
-        switch ($opcion) {
-            case "INSERT":
-                $valoresFila = "";
-                while (list($key, $val) = each($fila)) {
-                    $valoresFila = $valoresFila . " '" . $val . "', ";
-                    echo $key;
-                }
-                $valoresFila = substr($valoresFila, 0, -2);
-                mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_errno($this->link));
-                break;
-            case "SELECT":
-                $valoresFila = "";
-                
-                //select campos from tabla where idcampo=dato (opcional)and
-                break;
-            case "UPDATE":
-                break;
-        }
     }
 
     function actualizarActivos($fila = array(), $tabla = "", $id_Activo = "") {
@@ -68,22 +47,11 @@ class database {
         return $res;
     }
 
-    function actualizar($fila = array(), $tabla = "", $idCliente = "") {
-        $actualizar = "update " . $tabla . " set correo='$fila[0]', num_hijos='$fila[1]', ruta='$fila[2]' where id_cliente='$idCliente'";
-        mysqli_query($this->link, $actualizar) and mysql_info();
+    function actualizarDatos($campo_espe = array(), $campos = array(), $fila = array(), $tabla = "", $datos = array()) {
+        
     }
 
-    function insertarActivo($fila = array(), $tabla = "") {
-        $valoresFila = "";
-        while (list($key, $val) = each($fila)) {
-            $valoresFila = $valoresFila . " '" . $val . "', ";
-        }
-        $valoresFila = substr($valoresFila, 0, -2);
-//quitar en sql_error($link) si no es link + $this-> link
-        mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo(insertarActivo)" . mysqli_error($this->link));
-    }
-
-    function consultarDB($tabla = "", $campo = "", $dato = "", $campoEspeci = "") {
+    function seleccionDatos($tabla = "", $campo = "", $dato = "", $campoEspeci = "") {
         if ($campo == "") {
             $query = "select * from " . $tabla;
         } else if ($dato == "") {
@@ -98,5 +66,26 @@ class database {
     }
 
 }
+
+//function crudSQL($fila = array(), $tabla = "", $opcion = "") {
+//    switch ($opcion) {
+//        case "INSERT":
+//            $valoresFila = "";
+//            while (list($key, $val) = each($fila)) {
+//                $valoresFila = $valoresFila . " '" . $val . "', ";
+//                echo $key;
+//            }
+//            $valoresFila = substr($valoresFila, 0, -2);
+//            mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_errno($this->link));
+//            break;
+//        case "SELECT":
+//            $valoresFila = "";
+//
+//            //select campos from tabla where idcampo=dato (opcional)and
+//            break;
+//        case "UPDATE":
+//            break;
+//    }
+//}
 
 ?>
