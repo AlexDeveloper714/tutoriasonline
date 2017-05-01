@@ -145,6 +145,8 @@
                                     <option>Tutor</option>
                                     <option>Cliente</option>
                                 </select>
+                                <h3>Correo:</h3>
+                                <input class="form-control" type="email" name="correo" disabled="" required>
                                 <h3>Ubicación</h3>
                                 <div id="map" style="width:300px; height:300px"></div>
                                 <script src="js/googleMaps.js"></script>

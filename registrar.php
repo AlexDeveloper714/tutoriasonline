@@ -130,7 +130,7 @@
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Correo:</h2>
-                                <input class="form-control" type="text" name="correo" required>
+                                <input class="form-control" type="email" name="correo" required>
                                 <h2>Nombre de Usuario:</h2>
                                 <input class="form-control" type="text" name="usuario" required>
                                 <h2>Contraseña:</h2>
