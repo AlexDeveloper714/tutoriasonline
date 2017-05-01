@@ -1,5 +1,4 @@
 <?php
-
 //Revisar que las tablas divisoras (m*m) sirvan
 require_once 'database.php';
 $db2 = new database();

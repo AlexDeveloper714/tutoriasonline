@@ -39,15 +39,7 @@ class database {
         $cantidad = mysqli_num_rows($existe);
         return $cantidad;
     }
-
-    function actualizarActivos($fila = array(), $tabla = "", $id_Activo = "") {
-        $actualizar = "update " . $tabla . " set tipo_activo='$fila[0]', "
-                . "categoria='$fila[1]', marca='$fila[2]', modelo='$fila[3]',"
-                . " descripcion='$fila[4]', notas='$fila[5]' where id_activos='$id_Activo'";
-        $res = mysqli_query($this->link, $actualizar)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
-        return $res;
-    }
-
+    
     function actualizarDatos($campo_espe = array(), $campos = array(), $fila = array(), $tabla = "", $datos = array()) {
         //update TABLA set COLUMNA1="" and COLUMNA2="".... where COLUMNA REQUERIDA=$dato[0] and COLUMNA REQUERIDA_2=$dato[1]..."
         $actualizar = "update " . $tabla . " set ";
