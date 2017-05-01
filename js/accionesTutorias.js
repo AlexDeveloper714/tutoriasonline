@@ -22,16 +22,16 @@ function formCliente() {
         case "Ingreso tutorias":
             break;
         case "Registro tutorias":
-//            $("#registrarCliente").hide();
-//            var clave =$("#clave").val();
-//            var rep_clave =$("#rep_clave").val();
-//            if(clave == rep_clave){
-//                alert("Cierto");
-//                $("#registrarCliente").show();
-//            }else{
-//                alert("Falso");
-//                $("#registrarCliente").hide();
-//            }
+            $("#registrarCliente").hide();
+            $(":password").keyup(function () {
+                var clave = $("#clave").val();
+                var rep_clave = $("#rep_clave").val();
+                if (clave == rep_clave && clave != "") {
+                    $("#registrarCliente").show();
+                } else {
+                    $("#registrarCliente").hide();
+                }
+            });
             break;
         case "tutorias":
             break;
