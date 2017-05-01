@@ -5,7 +5,7 @@ tutorias online (pagina web)
 manager :D, feel free to use the code
 to improve yourself B)* 
 # ideas in order to improve
-   - [] Do AJAX content
+   - [ ] Do AJAX content
    - [x] Do JQuery stuff
-   - [] Be dinamic
+   - [ ] Be dinamic
    - [x] Make it simple
