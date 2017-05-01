@@ -32,6 +32,15 @@ function formCliente() {
                     $("#registrarCliente").hide();
                 }
             });
+            $("#mostrarPass").click(function () {
+                if ($("#mostrarPass").is(":checked")) {
+                    $("#clave").attr("type","text");
+                    $("#rep_clave").attr("type","text");
+                } else {
+                    $("#clave").attr("type","password");
+                    $("#rep_clave").attr("type","password");
+                }
+            });
             break;
         case "tutorias":
             break;

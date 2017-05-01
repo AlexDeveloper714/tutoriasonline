@@ -45,21 +45,13 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.php">Inicio</a></li>                      
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="ingresar.php">Por formulario</a></li>
-                                <li><a href="ingresar.php">Ingreso ONE-CLICK</a></li>
-                            </ul>
+                        <li>
+                            <a href="ingresar.php">Ingreso</a>
                         </li>  
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="registrar.php">Por formulario</a></li>
-                                <li><a href="registrar.php">Registro ONE-CLICK</a></li>
-                            </ul>
+                        <li>
+                            <a href="registrar.php">Registro</a>
                         </li>  
-                        <li class="dropdown">
+                        <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
@@ -70,12 +62,7 @@
                             </ul>
                         </li> 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi perfil <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="perfil.php">Eliminar Cuenta</a></li>
-                                <li><a href="perfil.php">Desactivar Cuenta</a></li>
-                                <li><a href="perfil.php">Modificar información personal</a></li>
-                            </ul>
+                            <a href="perfil.php" class="dropdown-toggle" data-toggle="dropdown">Mi perfil</a>
                         </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
@@ -84,13 +71,8 @@
                                 <li><a href="soporte.php">Via Email</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Acerca de <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="acerca_de.php">Sobre la empresa</a></li>
-                                <li><a href="acerca_de.php">Origen página</a></li>
-                                <li><a href="acerca_de.php">Objetivos Pagina</a></li>
-                            </ul>
+                        <li>
+                            <a href="acerca_de.php" class="dropdown-toggle" data-toggle="dropdown">Acerca de</a>
                         </li>
                     </ul>
                 </div>
@@ -144,7 +126,7 @@
                                 </select>
                                 <div class="checkbox col-xs-4">
                                     <label>
-                                        <input type="checkbox" value="">Ver pasaword
+                                        <input type="checkbox" value="" id="mostrarPass">Ver pasaword
                                     </label>
                                 </div>
                                 <h2>Universidad:</h2>
@@ -178,19 +160,6 @@
                         </div>
                     </div>
                 </form>
-
-                <div class="col-md-12 col-sm-6">
-                    <div class="service-wrapper">
-                        <h1>Registro ONE-CLICK</h1>
-                        <div class="col-md-12 col-sm-6">
-                            <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
-                            <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-                            <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-                            <a class="btn btn-social-icon btn-tumblr"><i class="fa fa-tumblr"></i></a>
-                            <br><br>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <hr>
