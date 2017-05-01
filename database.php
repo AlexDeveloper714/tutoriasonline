@@ -51,11 +51,13 @@ class database {
     function actualizarDatos($campo_espe = array(), $campos = array(), $fila = array(), $tabla = "", $datos = array()) {
         //update TABLA set COLUMNA1="" and COLUMNA2="".... where COLUMNA REQUERIDA=$dato[0] and COLUMNA REQUERIDA_2=$dato[1]..."
         $actualizar = "update " . $tabla . " set ";
+        //Necesidad de recorrer 2 arrays
         while (list($key, $val) = each($campos)) {
             $actualizar = $actualizar . $val . "', ";
         }
         $actualizar = substr($actualizar, 0, -2);
         $actualizar = $actualizar . " where ";
+        //Necesidad de recorrer 2 arrays
         while (list($key, $val) = each($campo)) {
             $actualizar = $actualizar . $val . "= '" . $val . "' and ";
         }

@@ -142,7 +142,7 @@
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                                 async defer></script><br>
                                 <input class="btn btn-default" type="button" id="cambiarInfo" value="Cambiar Información">
-                                <input class="btn btn-default" id="hacerCambios" type="submit" value="Aplicar Cambios" disabled="">
+                                <input class="btn btn-default" id="hacerCambios"  name="hacerCambios" type="submit" value="Aplicar Cambios" disabled="">
                             </div>
                         </div>
                     </form>
