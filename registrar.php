@@ -62,7 +62,7 @@
                             </ul>
                         </li> 
                         <li class="dropdown">
-                            <a href="perfil.php" class="dropdown-toggle" data-toggle="dropdown">Mi perfil</a>
+                            <a href="perfil.php">Mi perfil</a>
                         </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="acerca_de.php" class="dropdown-toggle" data-toggle="dropdown">Acerca de</a>
+                            <a href="acerca_de.php">Acerca de</a>
                         </li>
                     </ul>
                 </div>
