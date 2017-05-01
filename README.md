@@ -1,8 +1,7 @@
 # tutoriasonline
 >*PHP web page that automatizate 
 process to search info and use Google Maps 
-API in order to do easy stuff
-* 
+API in order to do easy stuff* 
 # basic aspects
 >*This is the most basic tutorial
 manager :D, feel free to use the code
