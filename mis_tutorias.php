@@ -29,7 +29,7 @@
 
 
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-1.9.1.min.js"></script>
 
 
     </head>
@@ -250,7 +250,7 @@
 
         <!-- Scrolling Nav JavaScript -->
         <!-- Javascripts -->
-        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/scrolling-nav.js"></script>		
         <script src="js/jquery.dataTables.min.js"></script>
