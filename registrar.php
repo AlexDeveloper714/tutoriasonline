@@ -134,9 +134,9 @@
                                 <h2>Nombre de Usuario:</h2>
                                 <input class="form-control" type="text" name="usuario" required>
                                 <h2>Contraseña:</h2>
-                                <input class="form-control" type="password" name="clave" required>
+                                <input class="form-control" type="password" name="clave" id="clave" required>
                                 <h2>Repetir Contraseña:</h2>
-                                <input class="form-control" type="password" name="rep_clave" required>
+                                <input class="form-control" type="password" name="rep_clave" id="rep_clave" required>
                                 <h2>Tipo de usuario:</h2>
                                 <select class="form-control" name="tipoCliente" required>
                                     <option>Tutor</option>
@@ -169,7 +169,7 @@
                                 <script src="js/googleMaps.js"></script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
                                 async defer></script><br>
-                                <button type="submit" class="btn btn-info btn-lg" name="enviarCliente">Registrarse</button>
+                                <button type="submit" class="btn btn-info btn-lg" name="enviarCliente" id="registrarCliente">Registrarse</button>
                                 <!--
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>     
                                 -->

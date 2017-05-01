@@ -22,6 +22,16 @@ function formCliente() {
         case "Ingreso tutorias":
             break;
         case "Registro tutorias":
+//            $("#registrarCliente").hide();
+//            var clave =$("#clave").val();
+//            var rep_clave =$("#rep_clave").val();
+//            if(clave == rep_clave){
+//                alert("Cierto");
+//                $("#registrarCliente").show();
+//            }else{
+//                alert("Falso");
+//                $("#registrarCliente").hide();
+//            }
             break;
         case "tutorias":
             break;
