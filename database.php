@@ -26,11 +26,11 @@ class database {
         $valoresFila = "";
         while (list($key, $val) = each($fila)) {
             $valoresFila = $valoresFila . " '" . $val . "', ";
-            echo $key;
         }
         $valoresFila = substr($valoresFila, 0, -2);
         $query = " insert into " . $tabla . " values( " . $valoresFila . ");";
         mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
+        echo $query;
     }
 
     function verificarClientes($documento, $tabla = "") {
