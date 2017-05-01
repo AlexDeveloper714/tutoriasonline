@@ -20,5 +20,5 @@ if (isset($_POST['enviarCliente'])) {
     }
     require 'index.php';
 } else {
-    echo "<h1>Si no me ves, es que no te sirvo :P</h1>";
+    echo "<h1>Si me ves, es que no te sirvo :P</h1>";
 }

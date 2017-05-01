@@ -29,7 +29,8 @@ class database {
             echo $key;
         }
         $valoresFila = substr($valoresFila, 0, -2);
-        mysqli_query($this->link, " insert into " . $tabla . " values( " . $valoresFila . ");")or die("la consulta fallo (insertar)" . mysqli_error($this->link));
+        $query = " insert into " . $tabla . " values( " . $valoresFila . ");";
+        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
     }
 
     function verificarClientes($documento, $tabla = "") {
@@ -48,7 +49,19 @@ class database {
     }
 
     function actualizarDatos($campo_espe = array(), $campos = array(), $fila = array(), $tabla = "", $datos = array()) {
-        
+        //update TABLA set COLUMNA1="" and COLUMNA2="".... where COLUMNA REQUERIDA=$dato[0] and COLUMNA REQUERIDA_2=$dato[1]..."
+        $actualizar = "update " . $tabla . " set ";
+        while (list($key, $val) = each($campos)) {
+            $actualizar = $actualizar . $val . "', ";
+        }
+        $actualizar = substr($actualizar, 0, -2);
+        $actualizar = $actualizar . " where ";
+        while (list($key, $val) = each($campo)) {
+            $actualizar = $actualizar . $val . "= '" . $val . "' and ";
+        }
+        $actualizar = substr($actualizar, 0, -4);
+        $query = $actualizar;
+        echo $query;
     }
 
     function seleccionDatos($tabla = "", $campo = "", $dato = "", $campoEspeci = "") {
@@ -87,5 +100,4 @@ class database {
 //            break;
 //    }
 //}
-
 ?>
