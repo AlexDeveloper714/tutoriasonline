@@ -32,7 +32,7 @@ $variablephp = $_SESSION['usuario']="Alexander";
         <link rel="stylesheet" href="css/sb-admin-2.css" type="text/css"/>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/jquery-1.9.1.min.js"></script>
-
+        <script src="js/accionesTutorias.js"></script>
 
     </head>
 
@@ -70,7 +70,7 @@ $variablephp = $_SESSION['usuario']="Alexander";
                                 <li><a href="tutorias.php">Busqueda Avanzada</a></li>
                             </ul>
                         </li> 
-                        <li class="dropdown">
+                        <li class="dropdown" id="perfil">
                             <a href="perfil.php">Mi perfil</a>
                         </li> 
                         <li class="dropdown">
@@ -158,7 +158,7 @@ $variablephp = $_SESSION['usuario']="Alexander";
                             <a href="tutorias.php" class="btn icon-search icon-2x"> Buscar Tutorias</a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-6" id="perfil_col">
                         <div class="service-wrapper">
                             <i class="icon-user"></i>
                             <h3>Modifica tu perfil</h3>

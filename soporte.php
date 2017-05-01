@@ -72,7 +72,7 @@
                             </ul>
                         </li> 
                         <li class="dropdown">
-                            <a href="perfil.php">Mi perfil</a>
+                            <a href="perfil.php" id="perfil">Mi perfil</a>
                         </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>

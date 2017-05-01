@@ -54,7 +54,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.php">Inicio</a></li>                      
                         <li>
-                            <a href="ingresar.php">Ingreso</a>
+                            <a href="ingresar.php" id="perfil">Ingreso</a>
                         </li>  
                         <li>
                             <a href="registrar.php">Registro</a>

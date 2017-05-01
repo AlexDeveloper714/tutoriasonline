@@ -1,4 +1,13 @@
 function formCliente() {
+    //Mandar $_session() OJO
+    if (1 == 1) {
+        $("#perfil").show();
+        $("#perfil_col").show();
+    } else {
+        $("#perfil").hide();
+        $("#perfil_col").hide();
+    }
+
     var title = document.title;
     switch (title) {
         case "Mi perfil":
@@ -34,11 +43,11 @@ function formCliente() {
             });
             $("#mostrarPass").click(function () {
                 if ($("#mostrarPass").is(":checked")) {
-                    $("#clave").attr("type","text");
-                    $("#rep_clave").attr("type","text");
+                    $("#clave").attr("type", "text");
+                    $("#rep_clave").attr("type", "text");
                 } else {
-                    $("#clave").attr("type","password");
-                    $("#rep_clave").attr("type","password");
+                    $("#clave").attr("type", "password");
+                    $("#rep_clave").attr("type", "password");
                 }
             });
             break;
