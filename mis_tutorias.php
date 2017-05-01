@@ -256,5 +256,6 @@
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.bootstrap.min.js"></script>
         <script src="js/responsive_table.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

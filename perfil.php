@@ -118,7 +118,7 @@
         <div class="section section-white">
             <div class="container">
                 <div class="row">
-                    <form  method="post" action="control.php">
+                    <form  method="post" action="controles.php">
                         <div class="col-md-4 col-sm-6">
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
@@ -132,13 +132,14 @@
                                 <select class="form-control" id="tipoDocumento" disabled="" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
-                                </select>                            
+                                </select> 
+                                <h3>Número de documento: </h3>
+                                <input class="form-control" id="documento" type="number" disabled="" required>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
                             <div class="service-wrapper">
-                                <h3>Número de documento: </h3>
-                                <input class="form-control" id="documento" type="number" disabled="" required>
+
                                 <br>
                                 <h3>Tipo de usuario: </h3>
                                 <select class="form-control"  id="tipoUsuario" disabled="" required>
@@ -146,7 +147,13 @@
                                     <option>Cliente</option>
                                 </select>
                                 <h3>Correo:</h3>
-                                <input class="form-control" type="email" name="correo" disabled="" required>
+                                <input class="form-control" type="email" name="correo" id="correo" disabled="" required>
+                                <h3>Telefono:</h3>
+                                <input class="form-control" type="number" name="telefono" id="telefono" disabled="" required>
+                                <h3>Contraseña:</h3>
+                                <input class="form-control" type="password" name="clave" id="clave" required disabled="">
+                                <h3>Repetir Contraseña:</h3>
+                                <input class="form-control" type="password" name="rep_clave" id="rep_clave" required disabled="">
                                 <h3>Ubicación</h3>
                                 <div id="map" style="width:300px; height:300px"></div>
                                 <script src="js/googleMaps.js"></script>
@@ -158,30 +165,32 @@
                         </div>
                     </form>
                     <div class="col-md-3 col-sm-6">
-                        <div class="service-wrapper">
-                            <i class="icon-user"></i>
-                            <h3>Elimina tu cuenta</h3>
-                            <p>Te iras para siempre de nuestra gran aplicación :(</p>
-                            <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal2"> Eliminar Cuenta</a>
-                        </div>
-                        <div class="service-wrapper">
-                            <i class="icon-user"></i>
-                            <h3>Desactiva tu cuenta</h3>
-                            <p>Solamente no apareceras en nuestra gran aplicación :/</p>
-                            <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal3"> Desactivar Cuenta</a>
-                        </div>
-                        <div class="service-wrapper">
-                            <i class="icon-user"></i>
-                            <h3>Califica tus tutorias</h3>
-                            <p>Evalua a los tutores que has encontrado, asi mejoraras los servicios de la pagina</p>
-                            <a href="mis_tutorias.php" class="btn icon-user icon-2x"> Califica tus tutorias</a>
-                        </div>
-                        <div class="service-wrapper">
-                            <i class="icon-user"></i>
-                            <h3>Mis tutorias</h3>
-                            <p>Revisa las tutorias que tengas asignadas :D</p>
-                            <a href="mis_tutorias.php" class="btn icon-user icon-2x">Revisa tus tutorias</a>
-                        </div>
+                        <form method="post" action="controles.php">
+                            <div class="service-wrapper">
+                                <i h3class="icon-user"></i>
+                                <h3>Elimina tu cuenta</h3>
+                                <p>Te iras para siempre de nuestra gran aplicación :(</p>
+                                <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal2"> Eliminar Cuenta</a>
+                            </div>
+                            <div class="service-wrapper">
+                                <i class="icon-user"></i>
+                                <h3>Desactiva tu cuenta</h3>
+                                <p>Solamente no apareceras en nuestra gran aplicación :/</p>
+                                <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal3"> Desactivar Cuenta</a>
+                            </div>
+                            <div class="service-wrapper">
+                                <i class="icon-user"></i>
+                                <h3>Califica tus tutorias</h3>
+                                <p>Evalua a los tutores que has encontrado, asi mejoraras los servicios de la pagina</p>
+                                <a href="mis_tutorias.php" class="btn icon-user icon-2x"> Califica tus tutorias</a>
+                            </div>
+                            <div class="service-wrapper">
+                                <i class="icon-user"></i>
+                                <h3>Mis tutorias</h3>
+                                <p>Revisa las tutorias que tengas asignadas :D</p>
+                                <a href="mis_tutorias.php" class="btn icon-user icon-2x">Revisa tus tutorias</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -209,8 +218,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="modal fade" id="myModal2" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -228,7 +235,6 @@
 
             </div>
         </div>
-
         <div class="modal fade" id="myModal3" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -246,7 +252,6 @@
 
             </div>
         </div>
-
         <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/scrolling-nav.js"></script>
