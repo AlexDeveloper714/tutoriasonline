@@ -1,4 +1,5 @@
 <?php
+
 //Revisar que las tablas divisoras (m*m) sirvan
 require_once 'database.php';
 $db2 = new database();
@@ -30,7 +31,50 @@ if (isset($_POST['hacerCambios'])) {
 //    echo $db2->actualizarDatos($campo_espe, $campos, $fila, "cleintes", $datos);
 }
 //Loguearse
-
+if (1 == 1) {
+    $db2->conectarDB();
+    //Cambiar condiciones
+    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
+        echo "<h1>
+           Cedula ya registrada, retrocediendo...
+       </h1>";
+        echo "<script type=\"text/javascript\">
+            setTimeout(function(){ history.go(-1); },500);
+       </script>";
+        exit;
+    } else {
+        
+    }
+}
 //Insertar y verificar tutorias
-
+if (1 == 1) {
+    $db2->conectarDB();
+     //Cambiar condiciones
+    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
+        echo "<h1>
+           Cedula ya registrada, retrocediendo...
+       </h1>";
+        echo "<script type=\"text/javascript\">
+            setTimeout(function(){ history.go(-1); },500);
+       </script>";
+        exit;
+    } else {
+        
+    }
+}
 //Actualizar datos Tutorias
+if (1 == 1) {
+    $db2->conectarDB();
+     //Cambiar condiciones
+    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
+        echo "<h1>
+           Cedula ya registrada, retrocediendo...
+       </h1>";
+        echo "<script type=\"text/javascript\">
+            setTimeout(function(){ history.go(-1); },500);
+       </script>";
+        exit;
+    }else{
+        
+    }
+}
