@@ -3,6 +3,9 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><html class="no-js"><!-->  <!--<![endif]-->
+<?php
+session_start();
+?>
 <html lang="en">
 
     <head>

@@ -105,14 +105,15 @@
                             <form  method="post" action="control.php">
                                 <h1>Ingreso Normal</h1>
                                 <h2>Usuario o Email:</h2>
-                                <input class="form-control" type="text" id="usuario">
+                                <input class="form-control" type="text" id="usuario" name="usuario">
                                 <h2>Clave:</h2>
-                                <input class="form-control" type="password" id="clave">
+                                <input class="form-control" type="password" id="clave" name="clave">
                                 <br>
                                 <div class="g-recaptcha" data-sitekey="6Ld3xxsUAAAAACt4vAxudeP10SOh610QowDDgayA"></div>
                                 <br>
-                                <!-- Trigger the modal with a button -->
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ingresar</button>
+                                <button type="submit" class="btn btn-info btn-lg" name="entrarSistema">Ingresar</button>
+<!--                                 Trigger the modal with a button 
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ingresar</button>-->
                             </form>
                         </div>
                     </div>
@@ -141,25 +142,25 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Confirmación Ingreso</h4>
+        <!--        <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                         Modal content
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Confirmación Ingreso</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Desea confirmar su ingreso con los siguientes datos?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            </div>
+                        </div>
+        
                     </div>
-                    <div class="modal-body">
-                        <p>Desea confirmar su ingreso con los siguientes datos?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#">Si</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                </div>-->
 
         <!-- Scrolling Nav JavaScript -->
         <script src="js/jquery.easing.min.js"></script>

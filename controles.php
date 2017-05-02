@@ -1,6 +1,6 @@
 <?php
 
-//Administrar $_SESSION (Es permanente)
+//$_SESSION (Permanente si las paginas que tienen session la inician)
 //Revisar que las tablas divisoras (m*m) sirvan
 session_start();
 require_once 'database.php';
@@ -49,19 +49,19 @@ if (isset($_POST['cambiarDatos'])) {
 //if(isset($_POST['entrarSistema']))
 if (isset($_POST['entrarSistema'])) {
     $db2->conectarDB();
-    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
-        $_SESSION['usuario'] = $_POST ['documento'];
-        echo "Bienvenido " . $_POST['documento'] . ":D";
-    } else {
-        echo "No eres un usuario certificado :P";
-    }
-    require 'PruebaUpdate.php';
+    //Mejorar select OJO
+//    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
+//        $_SESSION['usuario'] = $_POST ['documento'];
+//        echo "Bienvenido " . $_POST['documento'] . ":D";
+//    } else {
+//        echo "No eres un usuario certificado :P";
+//    }
+//    require 'PruebaUpdate.php';
 }
 //Cerrar sesion
 //if(isset($_POST['salirSistema']))
 if (isset($_POST['salirSistema'])) {
     $_SESSION['usuario'] = "";
-    session_destroy();
     require 'PruebaUpdate.php';
 }
 //Insertar y verificar tutorias
