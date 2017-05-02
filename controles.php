@@ -1,8 +1,8 @@
 <?php
-//Administrar $_SESSION (Es permanente)
-//Administrar login y logout
-//Revisar que las tablas divisoras (m*m) sirvan
 
+//Administrar $_SESSION (Es permanente)
+//Revisar que las tablas divisoras (m*m) sirvan
+session_start();
 require_once 'database.php';
 $db2 = new database();
 //Insertar y verificar Clientes
@@ -43,27 +43,26 @@ if (isset($_POST['cambiarDatos'])) {
 //Comprobar errores PHP :D
 //else {
 //    echo "<h1>Si me ves, es que no te sirvo :P</h1>";
-//    
+//    }
+
 //Loguearse
-if (1 == 2) {
+//if(isset($_POST['entrarSistema']))
+if (isset($_POST['entrarSistema'])) {
     $db2->conectarDB();
     if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
-        session_start();
         $_SESSION['usuario'] = $_POST ['documento'];
         echo "Bienvenido " . $_POST['documento'] . ":D";
     } else {
         echo "No eres un usuario certificado :P";
     }
+    require 'PruebaUpdate.php';
 }
 //Cerrar sesion
-if (1 == 2) {
-    $db2->conectarDB();
-    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
-        $_SESSION['usuario'] = "";
-        echo "Bienvenido " . $_POST['documento'] . ":D";
-    } else {
-        echo "No eres un usuario certificado :P";
-    }
+//if(isset($_POST['salirSistema']))
+if (isset($_POST['salirSistema'])) {
+    $_SESSION['usuario'] = "";
+    session_destroy();
+    require 'PruebaUpdate.php';
 }
 //Insertar y verificar tutorias
 if (1 == 2) {
