@@ -49,13 +49,11 @@ if (isset($_POST['cambiarDatos'])) {
 //if(isset($_POST['entrarSistema']))
 if (isset($_POST['entrarSistema'])) {
     $db2->conectarDB();
+    $camposReq=["usuario","clave"];
+    $datosBus=[$_POST ['usuario'], $_POST['clave']];
+    $camposBus=["usuario","clave"];
+    $db2->seleccionDatos($camposReq, $camposBus, $datosBus, "clientes");
     //Mejorar select OJO
-//    if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
-//        $_SESSION['usuario'] = $_POST ['documento'];
-//        echo "Bienvenido " . $_POST['documento'] . ":D";
-//    } else {
-//        echo "No eres un usuario certificado :P";
-//    }
 //    require 'PruebaUpdate.php';
 }
 //Cerrar sesion
