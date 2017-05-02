@@ -7,7 +7,6 @@ function formCliente() {
         $("#perfil").hide();
         $("#perfil_col").hide();
     }
-
     var title = document.title;
     switch (title) {
         case "Mi perfil":

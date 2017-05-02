@@ -39,22 +39,35 @@ class database {
         $cantidad = mysqli_num_rows($existe);
         return $cantidad;
     }
-    
-    function actualizarDatos($campo_espe = array(), $campos = array(), $fila = array(), $tabla = "", $datos = array()) {
-        //update TABLA set COLUMNA1="" and COLUMNA2="".... where COLUMNA REQUERIDA=$dato[0] and COLUMNA REQUERIDA_2=$dato[1]..."
+
+    function actualizarDatos($campoReq = array(), $datosReq = array(), $campoBus = array(), $datosBus = array(), $tabla = "") {
         $actualizar = "update " . $tabla . " set ";
-        //Necesidad de recorrer 2 arrays
-        while (list($key, $val) = each($campos)) {
-            $actualizar = $actualizar . $val . "', ";
+        foreach ($campoReq as $clave => $valor) {
+            $actualizar = $actualizar . $valor . "= '";
+            foreach ($datosReq as $clave_2 => $valor_2) {
+                if ($clave == $clave_2) {
+                    $actualizar = $actualizar . $valor_2 . "', ";
+                } else {
+                    continue;
+                }
+            }
         }
         $actualizar = substr($actualizar, 0, -2);
         $actualizar = $actualizar . " where ";
-        //Necesidad de recorrer 2 arrays
-        while (list($key, $val) = each($campo)) {
-            $actualizar = $actualizar . $val . "= '" . $val . "' and ";
+        foreach ($campoBus as $clave => $valor) {
+            $actualizar = $actualizar . $valor . "= '";
+            foreach ($datosBus as $clave_2 => $valor_2) {
+                if ($clave == $clave_2) {
+                    $actualizar = $actualizar . $valor_2 . "', ";
+                } else {
+                    continue;
+                }
+            }
         }
-        $actualizar = substr($actualizar, 0, -4);
+        $actualizar = substr($actualizar, 0, -2);
+        $actualizar = $actualizar . ";";
         $query = $actualizar;
+        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
         echo $query;
     }
 

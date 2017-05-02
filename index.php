@@ -172,13 +172,13 @@ $variablephp = $_SESSION['usuario']="Alexander";
                             <h3>Contactanos</h3>
                             <p>Avisanos en caso de alguna queja o reclamo, para eso estamos</p>
                             <a href="soporte.php" class="btn fa-bullhorn icon-2x"> Contactarnos</a>
-                            <script languaje="javascript">
+                            <script>
                                 function ver() {
                                     var VariableJS = "<?php echo $variablephp;?>";
                                     alert(VariableJS);
                                 }
                             </script> 
-                            <a href="#" onClick="ver()">pincha aquí</a>
+                            <a onClick="ver()">pincha aquí</a>
                         </div>
                     </div>
 
