@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2017 a las 16:49:42
+-- Tiempo de generación: 02-05-2017 a las 17:18:57
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -42,6 +42,14 @@ CREATE TABLE `clientes` (
   `estadoUsuario` varchar(200) NOT NULL,
   `clave` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`) VALUES
+(1, 'Alexander', 'Diaz', 'Cedula de Ciudadania', '1014244891', 'a@a.com', 'ANDES', '3192142650', 'Cliente', 'Alexander', 'ACTIVO', 0),
+(2, 'Cristian', 'Felipe', 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 0);
 
 -- --------------------------------------------------------
 
@@ -190,7 +198,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `soportes`
 --
