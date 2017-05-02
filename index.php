@@ -3,10 +3,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><html class="no-js"><!-->  <!--<![endif]-->
-<?php
-session_start();
-$variablephp = $_SESSION['usuario']="Alexander";
-?>
 <html lang="en">
 
     <head>
@@ -172,13 +168,6 @@ $variablephp = $_SESSION['usuario']="Alexander";
                             <h3>Contactanos</h3>
                             <p>Avisanos en caso de alguna queja o reclamo, para eso estamos</p>
                             <a href="soporte.php" class="btn fa-bullhorn icon-2x"> Contactarnos</a>
-                            <script>
-                                function ver() {
-                                    var VariableJS = "<?php echo $variablephp;?>";
-                                    alert(VariableJS);
-                                }
-                            </script> 
-                            <a onClick="ver()">pincha aquí</a>
                         </div>
                     </div>
 
