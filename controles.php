@@ -1,5 +1,4 @@
 <?php
-
 //$_SESSION (Permanente si las paginas que tienen session la inician)
 //Revisar que las tablas divisoras (m*m) sirvan
 session_start();
@@ -25,13 +24,8 @@ if (isset($_POST['enviarCliente'])) {
     }
     require 'index.php';
 }
-//Actualizar datos Clientes
-if (isset($_POST['hacerCambios'])) {
-    $db2->conectarDB();
-//    echo $db2->actualizarDatos($campo_espe, $campos, $fila, "cleintes", $datos);
-}
 
-//Experimento exitoso :D
+//Cambiar datos Usuario OJO
 if (isset($_POST['cambiarDatos'])) {
     $db2->conectarDB();
     $datosReq = [$_POST ['nombre'], $_POST['apellido']];
@@ -59,7 +53,6 @@ if (isset($_POST['entrarSistema'])) {
     require 'perfil.php';
 }
 //Cerrar sesion
-//if(isset($_POST['salirSistema']))
 if (isset($_POST['salirSistema'])) {
     if ($_SESSION['usuario'] != "") {
        $_SESSION['usuario'] = ""; 
