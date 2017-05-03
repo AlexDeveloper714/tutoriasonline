@@ -66,7 +66,7 @@
                             <a href="registrar.php">Registro</a>
                         </li>  
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle"  id="perfil_col" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
                                 <li><a href="tutorias.php">Por precio</a></li>

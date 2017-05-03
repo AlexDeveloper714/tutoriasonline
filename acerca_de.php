@@ -63,7 +63,7 @@
                             <a href="registrar.php">Registro</a>
                         </li>  
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle"  id="perfil_col" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
                                 <li><a href="tutorias.php">Por precio</a></li>
@@ -73,7 +73,7 @@
                             </ul>
                         </li> 
                         <li class="dropdown">
-                            <a href="perfil.php">Mi perfil</a>
+                            <a href="perfil.php" id="perfil">Mi perfil</a>
                         </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>

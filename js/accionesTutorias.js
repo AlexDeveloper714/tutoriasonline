@@ -3,8 +3,7 @@ function formCliente() {
     $("#perfil").hide();
     $("#perfil_col").hide();
     var valor = $("#sesion").attr("content");
-    alert(valor);
-    if (1 == 2) {
+    if (valor!="") {
         $("#perfil").show();
         $("#perfil_col").show();
     } else {

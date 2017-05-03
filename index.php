@@ -19,6 +19,7 @@
         <title>Tutorias Online 1.1</title>
 
         <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="css/main.css">
         <link href="css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom CSS -->
@@ -39,7 +40,7 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <input type="hidden" id="sesion" value="<?php echo $_SESSION['usuario'];?>">
+        <input type="hidden" id="sesion" value="<?php echo $_SESSION['usuario']; ?>">
         <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -60,8 +61,8 @@
                         <li>
                             <a href="registrar.php">Registro</a>
                         </li>  
-                        <li id="perfil_col">
-                            <a href="#" class="dropdown-toggle"  data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                        <li>
+                            <a href="#" class="dropdown-toggle"  id="perfil_col" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
                                 <li><a href="tutorias.php">Por precio</a></li>
@@ -70,8 +71,8 @@
                                 <li><a href="tutorias.php">Busqueda Avanzada</a></li>
                             </ul>
                         </li> 
-                        <li class="dropdown" id="perfil">
-                            <a href="perfil.php">Mi perfil</a>
+                        <li class="dropdown">
+                            <a href="perfil.php" id="perfil">Mi perfil</a>
                         </li> 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
