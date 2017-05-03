@@ -83,17 +83,18 @@ class database {
             $seleccionar = $seleccionar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
                 if ($clave == $clave_2) {
-                    $seleccionar = $seleccionar . $valor_2 . "', ";
+                    $seleccionar = $seleccionar . $valor_2 . "' and ";
                 } else {
                     continue;
                 }
             }
         }
-        $seleccionar = substr($seleccionar, 0, -2);
+        $seleccionar = substr($seleccionar, 0, -5);
+        $seleccionar = $seleccionar.";";
         $query=$seleccionar;
-        echo $query;
-//        $res = mysqli_query($this->link, $query);
-//        return $res;
+        $res = mysqli_query($this->link, $query);
+        $revisar= mysqli_num_rows($res);
+        return $revisar;
     }
 
 }

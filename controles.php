@@ -46,15 +46,18 @@ if (isset($_POST['cambiarDatos'])) {
 //    }
 
 //Loguearse
-//if(isset($_POST['entrarSistema']))
 if (isset($_POST['entrarSistema'])) {
     $db2->conectarDB();
     $camposReq=["usuario","clave"];
     $datosBus=[$_POST ['usuario'], $_POST['clave']];
     $camposBus=["usuario","clave"];
-    $db2->seleccionDatos($camposReq, $camposBus, $datosBus, "clientes");
+    if($db2->seleccionDatos($camposReq, $camposBus, $datosBus, "clientes")>0){
+        $_SESSION['usuario'] = $_POST ['usuario'];
+    }else{
+        $_SESSION['usuario'] = "";
+    }
     //Mejorar select OJO
-//    require 'PruebaUpdate.php';
+    require 'PruebaUpdate.php';
 }
 //Cerrar sesion
 //if(isset($_POST['salirSistema']))

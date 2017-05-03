@@ -103,8 +103,8 @@
                     <div class="service-wrapper">
                         <div class="col-md-4 col-md-offset-2 col-sm-6">
                             <form  method="post" action="controles.php">
-                                <h1>Ingreso Normal</h1>
-                                <h2>Usuario o Email:</h2>
+                                <h1>Ingreso</h1>
+                                <h2>Usuario:</h2>
                                 <input class="form-control" type="text" id="usuario" name="usuario">
                                 <h2>Clave:</h2>
                                 <input class="form-control" type="password" id="clave" name="clave">
