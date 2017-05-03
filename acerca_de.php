@@ -33,6 +33,7 @@
 
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/accionesTutorias.js"></script>
 
 
     </head>

@@ -2,8 +2,9 @@ function formCliente() {
     //Mandar $_session() OJO
     $("#perfil").hide();
     $("#perfil_col").hide();
- 
-    if (1==2) {
+    var valor = $("#sesion").attr("content");
+    alert(valor);
+    if (1 == 2) {
         $("#perfil").show();
         $("#perfil_col").show();
     } else {
