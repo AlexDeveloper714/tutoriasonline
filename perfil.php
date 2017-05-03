@@ -3,9 +3,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><html class="no-js"><!-->  <!--<![endif]-->
-<?php
-session_start();
-?>
 <html lang="en">
 
     <head>
@@ -99,12 +96,13 @@ session_start();
                 </div>
             </div>
         </div>
-        <h2><?php echo $_SESSION['usuario']; ?></h2>
+        <h2>Hola: <?php echo $_SESSION['usuario']; ?></h2>
         <!-- Services -->
         <div class="section section-white">
             <div class="container">
                 <div class="row">
-                    <form  method="post" action="controles.php">
+                    <form>
+                        <!--                    <form  method="post" action="controles.php">-->
                         <div class="col-md-4 col-sm-6">
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
@@ -113,7 +111,7 @@ session_start();
                                 <h3>Apellido: </h3>
                                 <input class="form-control" id="apellido" type="text" disabled="" required>
                                 <h3>Edad: </h3>
-                                <input class="form-control" id="edad" type="text" disabled="" required>
+                                <input class="form-control" id="edad" type="number" disabled="" required>
                                 <h3>Tipo de documento: </h3>
                                 <select class="form-control" id="tipoDocumento" disabled="" required>
                                     <option>Cedula de Ciudadania</option>
@@ -153,28 +151,28 @@ session_start();
                     <div class="col-md-3 col-sm-6">
                         <form method="post" action="controles.php">
                             <div class="service-wrapper">
-                                <i h3class="icon-user"></i>
+                                <i class="icon-user"></i>
                                 <h3>Elimina tu cuenta</h3>
                                 <p>Te iras para siempre de nuestra gran aplicación :(</p>
-                                <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal2"> Eliminar Cuenta</a>
+                                <button type="submit" class="btn btn-info btn-lg" name="desactivarUsuario">Eliminar tu cuenta</button>
                             </div>
                             <div class="service-wrapper">
                                 <i class="icon-user"></i>
-                                <h3>Desactiva tu cuenta</h3>
-                                <p>Solamente no apareceras en nuestra gran aplicación :/</p>
-                                <a href="#" class="btn icon-user icon-2x"  data-toggle="modal" data-target="#myModal3"> Desactivar Cuenta</a>
+                                <h3>Cerrar tu sesion</h3>
+                                <p>Solamente si estas cansado de vernos :(</p>
+                                <button type="submit" class="btn btn-info btn-lg" name="salirSistema">Cerrar sesión</button>
                             </div>
                             <div class="service-wrapper">
                                 <i class="icon-user"></i>
                                 <h3>Califica tus tutorias</h3>
                                 <p>Evalua a los tutores que has encontrado, asi mejoraras los servicios de la pagina</p>
-                                <a href="mis_tutorias.php" class="btn icon-user icon-2x"> Califica tus tutorias</a>
+                                <button type="submit" class="btn btn-info btn-lg" name="calificarTutorias">Calificar Tutorias</button>
                             </div>
                             <div class="service-wrapper">
                                 <i class="icon-user"></i>
                                 <h3>Mis tutorias</h3>
                                 <p>Revisa las tutorias que tengas asignadas :D</p>
-                                <a href="mis_tutorias.php" class="btn icon-user icon-2x">Revisa tus tutorias</a>
+                                <button type="submit" class="btn btn-info btn-lg" name="revisarTutorias">Revisar tutorias</button>
                             </div>
                         </form>
                     </div>
