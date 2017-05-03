@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><html class="no-js"><!-->  <!--<![endif]-->
 <?php
-session_start();
+@session_start();
 ?>
 <html lang="en">
 
@@ -15,6 +15,8 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <meta id="sesion" content="<?php echo $_SESSION['usuario'];?>">
+
 
         <title>Mis tutorias</title>
 

@@ -3,6 +3,9 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><html class="no-js"><!-->  <!--<![endif]-->
+<?php
+@session_start();
+?>
 <html lang="en">
 
     <head>
@@ -12,6 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <meta id="sesion" content="<?php echo $_SESSION['usuario'];?>">
 
         <title>Tutorias Online 1.1</title>
 
@@ -56,8 +60,8 @@
                         <li>
                             <a href="registrar.php">Registro</a>
                         </li>  
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                        <li id="perfil_col">
+                            <a href="#" class="dropdown-toggle"  data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
                                 <li><a href="tutorias.php">Por precio</a></li>

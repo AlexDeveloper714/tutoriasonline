@@ -1,6 +1,9 @@
 function formCliente() {
     //Mandar $_session() OJO
-    if (1 == 1) {
+    $("#perfil").hide();
+    $("#perfil_col").hide();
+ 
+    if (1==2) {
         $("#perfil").show();
         $("#perfil_col").show();
     } else {
