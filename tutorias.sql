@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2017 a las 17:18:57
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 09-05-2017 a las 00:38:55
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -40,7 +38,7 @@ CREATE TABLE `clientes` (
   `tipoCliente` varchar(200) NOT NULL,
   `usuario` varchar(200) NOT NULL,
   `estadoUsuario` varchar(200) NOT NULL,
-  `clave` int(11) NOT NULL
+  `clave` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -48,8 +46,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`) VALUES
-(1, 'Alexander', 'Diaz', 'Cedula de Ciudadania', '1014244891', 'a@a.com', 'ANDES', '3192142650', 'Cliente', 'Alexander', 'ACTIVO', 0),
-(2, 'Cristian', 'Felipe', 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 0);
+(1, 'Alexander', 'Diaz', 'Cedula de Ciudadania', '1014244891', 'a@a.com', 'ANDES', '3192142650', 'Cliente', 'Alexander', 'ACTIVO', 'Diaz'),
+(2, 'Cristian', 'Felipe', 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', '0');
 
 -- --------------------------------------------------------
 
@@ -248,7 +246,6 @@ ALTER TABLE `soportes`
 --
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
