@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2017 a las 00:38:55
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.21
+-- Tiempo de generación: 10-05-2017 a las 16:25:49
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -46,8 +46,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`) VALUES
-(1, 'Alexander', 'Diaz', 'Cedula de Ciudadania', '1014244891', 'a@a.com', 'ANDES', '3192142650', 'Cliente', 'Alexander', 'ACTIVO', 'Diaz'),
-(2, 'Cristian', 'Felipe', 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', '0');
+(1, 'Alexander', 'Diaz', 'Cedula de Ciudadania', '1014244891', 'a@a.com', 'ANDES', '3192142650', 'Cliente', 'Alexander', 'ACTIVOS', 'Diaz'),
+(2, 'Cristian', 'Felipe', 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 'Cruz');
 
 -- --------------------------------------------------------
 
@@ -196,7 +196,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `soportes`
 --
