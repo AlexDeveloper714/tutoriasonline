@@ -58,13 +58,13 @@ class database {
             $actualizar = $actualizar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
                 if ($clave == $clave_2) {
-                    $actualizar = $actualizar . $valor_2 . "', ";
+                    $actualizar = $actualizar . $valor_2 . "' and ";
                 } else {
                     continue;
                 }
             }
         }
-        $actualizar = substr($actualizar, 0, -2);
+        $actualizar = substr($actualizar, 0, -5);
         $actualizar = $actualizar . ";";
         $query = $actualizar;
         mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
