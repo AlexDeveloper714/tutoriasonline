@@ -78,7 +78,7 @@ class database {
             $seleccionar = $seleccionar . $valor . ", ";
         }
         $seleccionar = substr($seleccionar, 0, -2);
-        $seleccionar = $seleccionar." from ".$tabla." where ";
+        $seleccionar = $seleccionar . " from " . $tabla . " where ";
         foreach ($campoBus as $clave => $valor) {
             $seleccionar = $seleccionar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
@@ -90,11 +90,25 @@ class database {
             }
         }
         $seleccionar = substr($seleccionar, 0, -5);
-        $seleccionar = $seleccionar.";";
-        $query=$seleccionar;
+        $seleccionar = $seleccionar . ";";
+        $query = $seleccionar;
         $res = mysqli_query($this->link, $query);
-        $revisar= mysqli_num_rows($res);
+        $revisar = mysqli_num_rows($res);
         return $revisar;
+    }
+
+    function selectorOption($tabla = "", $campo = "", $dato = "", $campoEspeci = "") {
+        if ($campo == "") {
+            $query = "select * from " . $tabla;
+        } else if ($dato == "") {
+            $query = "select " . $campo . " from " . $tabla;
+        } else if ($campoEspeci == "") {
+            $query = "select * from " . $tabla . " where " . $campo . " = " . $dato;
+        } else {
+            $query = "select " . $campoEspeci . " from " . $tabla . " where " . $campo . " = " . $dato;
+        }
+        $res = mysqli_query($this->link, $query);
+        return $res;
     }
 
 }

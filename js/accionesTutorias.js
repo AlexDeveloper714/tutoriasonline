@@ -63,6 +63,14 @@ function formCliente() {
                 responsive: true
             });
             break;
+//        case "Error no especificado": 
+//            $ingreso=$("#ingreso").val();
+//            $registro=$("#registro").val();
+//            $("#registro").empty();
+////            $("#registro").append($ingreso);
+////            $("#ingreso")
+////            $("#registro").html("Cosas");
+//             break;
     }
 }
 

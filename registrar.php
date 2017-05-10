@@ -140,7 +140,7 @@
                                     require_once 'database.php';
                                     $db = new database();
                                     $db->conectarDB();
-                                    $res = $db->seleccionDatos("universidades", "nombreUniversidad");
+                                    $res = $db->selectorOption("universidades", "nombreUniversidad");
                                     while ($row = mysqli_fetch_array($res)) {
                                         echo '<option>';
                                         echo $row['nombreUniversidad'];
