@@ -16,7 +16,6 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <meta id="sesion" content="<?php echo $_SESSION['usuario']; ?>">
-
         <title>Error no especificado</title>
 
         <!-- Bootstrap Core CSS -->
@@ -35,6 +34,7 @@
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/accionesTutorias.js"></script>
         <script src="js/accionesTutorias.js"></script>
+        <script src="js/angular.min.js"></script>
 
     </head>
 
@@ -115,6 +115,12 @@
                             usuario ya existe en el sistema :/
                         </p>
                         <a href="javascript:history.back(1)" >Retorna a la pagina anterior</a>
+                    </div>
+                    <div ng-app="" class="col-sm-8">
+                        <p>Input something in the input box:</p>
+                        <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+                        <h1>Hello {{name}}</h1>
+
                     </div>
                 </div>
             </div>
