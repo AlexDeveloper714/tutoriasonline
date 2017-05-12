@@ -100,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <h2>Hola: <?php echo $_SESSION['usuario']."??".$_SESSION['tipoUsuario']; ?></h2>
+        <h2>Hola: <?php echo $_SESSION['usuario']?></h2>
         <!-- Services -->
         <div class="section section-white">
             <div class="container">
@@ -110,18 +110,18 @@
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
                                 <h3>Nombre: </h3>
-                                <input class="form-control" id="nombre" name="nombre" type="text" disabled="" required>
+                                <input class="form-control" id="nombre" name="nombre" type="text" disabled=""  value='<?php echo $_SESSION['nombre'];?>' required>
                                 <h3>Apellido: </h3>
-                                <input class="form-control" id="apellido" name="apellido" type="text" disabled="" required>
+                                <input class="form-control" id="apellido" name="apellido" type="text" disabled="" value='<?php echo $_SESSION['apellido'];?>'  required>
                                 <h3>Edad: </h3>
-                                <input class="form-control" id="edad" name="edad" type="number" disabled="" required>
+                                <input class="form-control" id="edad" name="edad" type="number" disabled="" value='<?php echo $_SESSION['edad'];?>' required>
                                 <h3>Tipo de documento: </h3>
                                 <select class="form-control" id="tipoDocumento" name="tipoDocumento" disabled="" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select> 
                                 <h3>Número de documento: </h3>
-                                <input class="form-control" id="documento" name="documento" type="number" disabled="" required>
+                                <input class="form-control" id="documento" name="documento" type="number" disabled="" value='<?php echo $_SESSION['documento'];?>' required>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
@@ -134,9 +134,9 @@
                                     <option>Cliente</option>
                                 </select>
                                 <h3>Correo:</h3>
-                                <input class="form-control" type="email" name="correo" id="correo" disabled="" required>
+                                <input class="form-control" type="email" name="correo" id="correo" disabled="" value='<?php echo $_SESSION['correo'];?>' required>
                                 <h3>Telefono:</h3>
-                                <input class="form-control" type="number" name="telefono" id="telefono" disabled="" required>
+                                <input class="form-control" type="number" name="telefono" id="telefono" disabled="" value='<?php echo $_SESSION['telefono'];?>' required>
                                 <h3>Contraseña:</h3>
                                 <input class="form-control" type="password" name="clave" id="clave" required disabled="">
                                 <h3>Repetir Contraseña:</h3>

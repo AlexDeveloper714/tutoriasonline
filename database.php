@@ -1,5 +1,7 @@
 <?php
+
 @session_start();
+
 class database {
 
     private $usuario;
@@ -52,7 +54,7 @@ class database {
                 }
             }
         }
-        $actualizar = substr($actualizar, 0, -2). " where ";
+        $actualizar = substr($actualizar, 0, -2) . " where ";
         foreach ($campoBus as $clave => $valor) {
             $actualizar = $actualizar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
@@ -63,7 +65,7 @@ class database {
                 }
             }
         }
-        $actualizar = substr($actualizar, 0, -5). ";";
+        $actualizar = substr($actualizar, 0, -5) . ";";
         $query = $actualizar;
         echo $query;
 //        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
@@ -75,7 +77,7 @@ class database {
         foreach ($campoReq as $clave => $valor) {
             $seleccionar = $seleccionar . $valor . ", ";
         }
-        $seleccionar = substr($seleccionar, 0, -2). " from " . $tabla . " where ";
+        $seleccionar = substr($seleccionar, 0, -2) . " from " . $tabla . " where ";
         foreach ($campoBus as $clave => $valor) {
             $seleccionar = $seleccionar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
@@ -86,12 +88,19 @@ class database {
                 }
             }
         }
-        $seleccionar = substr($seleccionar, 0, -5).";";
+        $seleccionar = substr($seleccionar, 0, -5) . ";";
         $query = $seleccionar;
         $res = mysqli_query($this->link, $query);
         while ($row = mysqli_fetch_array($res)) {
-            $_SESSION["usuario"]=$row[9];
-            $_SESSION["tipoUsuario"]=$row[8];
+            $_SESSION["nombre"] = $row[1];
+            $_SESSION["apellido"] = $row[2];
+            $_SESSION["edad"] = $row[3];
+            $_SESSION["tipoDocumento"] = $row[4];
+            $_SESSION["documento"] = $row[5];
+            $_SESSION["correo"] = $row[6];
+            $_SESSION["telefono"] = $row[8];
+            $_SESSION["tipoUsuario"] = $row[9];
+            $_SESSION["usuario"] = $row[10];
         }
     }
 
