@@ -81,3 +81,14 @@ if (1 == 2) {
         
     }
 }    
+//"Eliminar"  usuario OK
+if (isset($_POST['desactivarUsuario'])) {
+    $db2->conectarDB();
+    $datosReq = ["INACTIVO"];
+    $camposReq = ["estadoUsuario"];
+    $datosBusq = [$_SESSION['usuario']];
+    $camposBus = ["usuario"];
+    $db2->actualizarDatos($camposReq, $datosReq, $camposBus, $datosBusq, "clientes");
+    session_destroy();
+    require 'index.php';
+}

@@ -67,8 +67,7 @@ class database {
         }
         $actualizar = substr($actualizar, 0, -5) . ";";
         $query = $actualizar;
-        echo $query;
-//        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
+        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
     }
 
     function seleccionDatos($campoReq = array(), $campoBus = array(), $datosBus = array(), $tabla = "") {
