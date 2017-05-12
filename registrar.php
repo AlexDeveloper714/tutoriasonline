@@ -47,40 +47,38 @@
                     </button>
                     <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="Basica"></a>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.php">Inicio</a></li>                      
-                        <li>
-                            <a href="ingresar.php">Ingreso</a>
-                        </li>  
-                        <li>
-                            <a href="registrar.php">Registro</a>
-                        </li>  
-                        <li>
-                            <a href="#" class="dropdown-toggle"  id="perfil_col" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="tutorias.php">Por hora</a></li>
-                                <li><a href="tutorias.php">Por precio</a></li>
-                                <li><a href="tutorias.php">Por votos</a></li>
-                                <li><a href="tutorias.php">Por ubicación</a></li>
-                                <li><a href="tutorias.php">Busqueda Avanzada</a></li>
-                            </ul>
-                        </li> 
-                        <li class="dropdown">
-                            <a href="perfil.php" id="perfil">Mi perfil</a>
-                        </li> 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="soporte.php">Via Chat</a></li>
-                                <li><a href="soporte.php">Via Email</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="acerca_de.php">Acerca de</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.php">Inicio</a></li>                      
+                    <li>
+                        <a href="ingresar.php" id="ingreso">Ingreso</a>
+                    </li>  
+                    <li>
+                        <a href="registrar.php" id="registro">Registro</a>
+                    </li>  
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tutorias.php">Por hora</a></li>
+                            <li><a href="tutorias.php">Por precio</a></li>
+                            <li><a href="tutorias.php">Por votos</a></li>
+                            <li><a href="tutorias.php">Por ubicación</a></li>
+                            <li><a href="tutorias.php">Busqueda Avanzada</a></li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="perfil.php" id="perfil">Mi perfil</a>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="soporte.php">Via Chat</a></li>
+                            <li><a href="soporte.php">Via Email</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="acerca_de.php">Acerca de</a>
+                    </li>
+                </ul>
             </div>
         </header><!--/header-->
 

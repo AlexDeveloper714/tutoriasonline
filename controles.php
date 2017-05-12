@@ -21,7 +21,7 @@ if (isset($_POST['entrarSistema'])) {
 //Cerrar sesion OK
 if (isset($_POST['salirSistema'])) {
     if ($_SESSION['usuario'] != "") {
-        session_destroy();
+        $_SESSION['usuario']="";
     }
     require 'index.php';
 }

@@ -56,17 +56,16 @@
                     </button>
                     <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="Basica"></a>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.php">Inicio</a></li>                      
                         <li>
-                            <a href="ingresar.php">Ingreso</a>
+                            <a href="ingresar.php" id="ingreso">Ingreso</a>
                         </li>  
                         <li>
-                            <a href="registrar.php">Registro</a>
+                            <a href="registrar.php" id="registro">Registro</a>
                         </li>  
                         <li>
-                            <a href="#" class="dropdown-toggle"  id="perfil_col" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
                                 <li><a href="tutorias.php">Por precio</a></li>
@@ -89,7 +88,6 @@
                             <a href="acerca_de.php">Acerca de</a>
                         </li>
                     </ul>
-                </div>
             </div>
         </header><!--/header-->
         <!-- Page Title -->

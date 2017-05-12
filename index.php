@@ -15,7 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        <meta id="sesion" content="<?php echo $_SESSION['usuario']; ?>">
+        
         <title>Tutorias Online 1.1</title>
 
         <!-- Bootstrap Core CSS -->
@@ -56,13 +57,13 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.php">Inicio</a></li>                      
                         <li>
-                            <a href="ingresar.php">Ingreso</a>
+                            <a href="ingresar.php" id="ingreso">Ingreso</a>
                         </li>  
                         <li>
-                            <a href="registrar.php">Registro</a>
+                            <a href="registrar.php" id="registro">Registro</a>
                         </li>  
                         <li>
-                            <a href="#" class="dropdown-toggle"  id="perfil_col" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="tutorias.php">Por hora</a></li>
                                 <li><a href="tutorias.php">Por precio</a></li>
