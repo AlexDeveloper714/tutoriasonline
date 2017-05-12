@@ -100,29 +100,28 @@
                 </div>
             </div>
         </div>
-        <h2>Hola: <?php echo $_SESSION['usuario']; ?></h2>
+        <h2>Hola: <?php echo $_SESSION['usuario']."??".$_SESSION['tipoUsuario']; ?></h2>
         <!-- Services -->
         <div class="section section-white">
             <div class="container">
                 <div class="row">
-                    <form>
-                        <!--                    <form  method="post" action="controles.php">-->
+                    <form method="post" action="controles.php">
                         <div class="col-md-4 col-sm-6">
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
                                 <h3>Nombre: </h3>
-                                <input class="form-control" id="nombre" type="text" disabled="" required>
+                                <input class="form-control" id="nombre" name="nombre" type="text" disabled="" required>
                                 <h3>Apellido: </h3>
-                                <input class="form-control" id="apellido" type="text" disabled="" required>
+                                <input class="form-control" id="apellido" name="apellido" type="text" disabled="" required>
                                 <h3>Edad: </h3>
-                                <input class="form-control" id="edad" type="number" disabled="" required>
+                                <input class="form-control" id="edad" name="edad" type="number" disabled="" required>
                                 <h3>Tipo de documento: </h3>
-                                <select class="form-control" id="tipoDocumento" disabled="" required>
+                                <select class="form-control" id="tipoDocumento" name="tipoDocumento" disabled="" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select> 
                                 <h3>Número de documento: </h3>
-                                <input class="form-control" id="documento" type="number" disabled="" required>
+                                <input class="form-control" id="documento" name="documento" type="number" disabled="" required>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
@@ -130,7 +129,7 @@
 
                                 <br>
                                 <h3>Tipo de usuario: </h3>
-                                <select class="form-control"  id="tipoUsuario" disabled="" required>
+                                <select class="form-control"  id="tipoUsuario" name="tipoUsuario" disabled="" required>
                                     <option>Tutor</option>
                                     <option>Cliente</option>
                                 </select>

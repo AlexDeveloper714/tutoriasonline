@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <meta id="sesion" content="<?php echo $_SESSION['usuario'];?>">
+        <meta id="sesion" content="<?php echo $_SESSION['usuario']; ?>">
 
         <title>Registro tutorias</title>
         <!-- Bootstrap Core CSS -->
@@ -114,6 +114,8 @@
                                 <input class="form-control" type="number" name="documento" required>
                                 <h2>Telefono:</h2>
                                 <input class="form-control" type="number" name="telefono" required>    
+                                <h2>Edad: </h2>
+                                <input class="form-control" id="edad" name="edad" type="number" required>
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <h2>Correo:</h2>

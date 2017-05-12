@@ -1,5 +1,5 @@
 <?php
-
+@session_start();
 class database {
 
     private $usuario;
@@ -52,8 +52,7 @@ class database {
                 }
             }
         }
-        $actualizar = substr($actualizar, 0, -2);
-        $actualizar = $actualizar . " where ";
+        $actualizar = substr($actualizar, 0, -2). " where ";
         foreach ($campoBus as $clave => $valor) {
             $actualizar = $actualizar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
@@ -64,11 +63,10 @@ class database {
                 }
             }
         }
-        $actualizar = substr($actualizar, 0, -5);
-        $actualizar = $actualizar . ";";
+        $actualizar = substr($actualizar, 0, -5). ";";
         $query = $actualizar;
-        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
         echo $query;
+//        mysqli_query($this->link, $query)or die("la consulta fallo (insertar)" . mysqli_error($this->link));
     }
 
     function seleccionDatos($campoReq = array(), $campoBus = array(), $datosBus = array(), $tabla = "") {
@@ -77,8 +75,7 @@ class database {
         foreach ($campoReq as $clave => $valor) {
             $seleccionar = $seleccionar . $valor . ", ";
         }
-        $seleccionar = substr($seleccionar, 0, -2);
-        $seleccionar = $seleccionar . " from " . $tabla . " where ";
+        $seleccionar = substr($seleccionar, 0, -2). " from " . $tabla . " where ";
         foreach ($campoBus as $clave => $valor) {
             $seleccionar = $seleccionar . $valor . "= '";
             foreach ($datosBus as $clave_2 => $valor_2) {
@@ -89,12 +86,13 @@ class database {
                 }
             }
         }
-        $seleccionar = substr($seleccionar, 0, -5);
-        $seleccionar = $seleccionar . ";";
+        $seleccionar = substr($seleccionar, 0, -5).";";
         $query = $seleccionar;
         $res = mysqli_query($this->link, $query);
-        $revisar = mysqli_num_rows($res);
-        return $revisar;
+        while ($row = mysqli_fetch_array($res)) {
+            $_SESSION["usuario"]=$row[9];
+            $_SESSION["tipoUsuario"]=$row[8];
+        }
     }
 
     function selectorOption($tabla = "", $campo = "", $dato = "", $campoEspeci = "") {

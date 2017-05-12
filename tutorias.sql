@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2017 a las 16:25:49
+-- Tiempo de generación: 12-05-2017 a las 03:32:32
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -30,6 +30,7 @@ CREATE TABLE `clientes` (
   `idCliente` int(20) NOT NULL,
   `nombre` varchar(200) NOT NULL,
   `apellido` varchar(200) NOT NULL,
+  `edad` int(200) NOT NULL,
   `tipoDocumento` varchar(200) NOT NULL,
   `documento` varchar(200) NOT NULL,
   `correo` varchar(200) NOT NULL,
@@ -45,9 +46,9 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`) VALUES
-(1, 'Alexander', 'Diaz', 'Cedula de Ciudadania', '1014244891', 'a@a.com', 'ANDES', '3192142650', 'Cliente', 'Alexander', 'ACTIVOS', 'Diaz'),
-(2, 'Cristian', 'Felipe', 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 'Cruz');
+INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `edad`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`) VALUES
+(1, 'Alexander', 'Diaz', 25, 'Cedula de Ciudadania', '1014244891', 'b@b.com', 'ANDES', '3192142650', 'Tutor', 'Alexander', 'ACTIVO', '123'),
+(2, 'Cristian', 'Felipe', 24, 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 'Cruz');
 
 -- --------------------------------------------------------
 

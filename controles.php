@@ -1,8 +1,7 @@
 <?php
-
 //$_SESSION (Permanente si las paginas que tienen session la inician)
 //Revisar que las tablas divisoras (m*m) sirvan
-session_start();
+@session_start();
 require_once 'database.php';
 $db2 = new database();
 //Insertar y verificar Clientes
@@ -11,7 +10,7 @@ if (isset($_POST['enviarCliente'])) {
     if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
         header("Location: errores.php");
     } else {
-        $datosReq = [0, $_POST ['nombre'], $_POST['apellido'], $_POST['tipoDocumento'],
+    $datosReq = [0, $_POST ['nombre'], $_POST['apellido'],$_POST['edad'], $_POST['tipoDocumento'],
             $_POST['documento'], $_POST ['correo'], $_POST['universidad']
             , $_POST['telefono'], $_POST ['tipoCliente']
             , $_POST['usuario'], "ACTIVO", $_POST['clave']];
@@ -19,31 +18,28 @@ if (isset($_POST['enviarCliente'])) {
     }
     require 'index.php';
 }
-
-//Cambiar datos Usuario OJO
-if (isset($_POST['cambiarDatos'])) {
+//Cambiar datos Usuario
+if (isset($_POST['hacerCambios'])) {
     $db2->conectarDB();
-    $datosReq = [$_POST ['nombre'], $_POST['apellido']];
-    $camposReq = ["nombre", "apellido"];
-    $datosBusq = [$_POST["documento"]];
-    $camposBus = ["documento"];
-//    $db2->actualizarDatos($camposReq, $datosReq, $camposBus, $datosBusq, "clientes");
+    $datosReq = [$_POST ['nombre'], $_POST['apellido'],$_POST['edad'],$_POST['tipoDocumento'],$_POST['documento'],$_POST['tipoUsuario'],$_POST['correo'],$_POST['telefono'],$_POST['clave']];
+    $camposReq = ["nombre", "apellido","edad","tipoDocumento","documento","tipoCliente","correo","telefono","clave"];
+    $datosBusq = [$_SESSION['usuario'],$_SESSION['tipoUsuario']];
+    $camposBus = ["usuario","tipoCliente"];
+    $db2->actualizarDatos($camposReq, $datosReq, $camposBus, $datosBusq, "clientes");
+    require 'perfil.php';
 }
-//Comprobar errores PHP :D
-//else {
-//    echo "<h1>Si me ves, es que no te sirvo :P</h1>";
-//    }
 //Loguearse
 if (isset($_POST['entrarSistema'])) {
     $db2->conectarDB();
-    $camposReq = ["usuario", "clave"];
+    $camposReq = ["*"];
     $datosBus = [$_POST ['usuario'], $_POST['clave'], "ACTIVO"];
     $camposBus = ["usuario", "clave", "estadoUsuario"];
-    if ($db2->seleccionDatos($camposReq, $camposBus, $datosBus, "clientes") > 0) {
-        $_SESSION['usuario'] = $_POST ['usuario'];
+    $db2->seleccionDatos($camposReq, $camposBus, $datosBus, "clientes");
+    if($_SESSION["usuario"]!=""){
         require 'perfil.php';
-    } else {
+    }else{
         $_SESSION['usuario'] = "";
+        $_SESSION['tipoUsuario'] = "";
         header("Location: errores.php");
     }
 }
@@ -51,8 +47,7 @@ if (isset($_POST['entrarSistema'])) {
 if (isset($_POST['salirSistema'])) {
     if ($_SESSION['usuario'] != "") {
         $_SESSION['usuario'] = "";
-    } else {
-        
+        $_SESSION['tipoUsuario'] = "";
     }
     require 'index.php';
 }
