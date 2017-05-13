@@ -34,7 +34,7 @@ if (isset($_POST['enviarCliente'])) {
         $datosReq = [0, $_POST ['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['tipoDocumento'],
             $_POST['documento'], $_POST ['correo'], $_POST['universidad']
             , $_POST['telefono'], $_POST ['tipoCliente']
-            , $_POST['usuario'], "ACTIVO", $_POST['clave']];
+            , $_POST['usuario'], "ACTIVO", $_POST['clave'],$_POST['lat'],$_POST['lon']];
         $db2->insertarDatos($datosReq, "clientes");
     }
     require 'index.php';
@@ -56,10 +56,11 @@ if (1 == 2) {
     }
 }
 //Actualizar datos Usuario OK
+//Mostrar localización anterior en perfil
 if (isset($_POST['hacerCambios'])) {
     $db2->conectarDB();
-    $datosReq = [$_POST ['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['tipoDocumento'], $_POST['documento'], $_POST['tipoUsuario'], $_POST['correo'], $_POST['telefono'], $_POST['clave']];
-    $camposReq = ["nombre", "apellido", "edad", "tipoDocumento", "documento", "tipoCliente", "correo", "telefono", "clave"];
+    $datosReq = [$_POST ['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['tipoDocumento'], $_POST['documento'], $_POST['tipoUsuario'], $_POST['correo'], $_POST['telefono'], $_POST['clave'],$_POST['lat'],$_POST['lon']];
+    $camposReq = ["nombre", "apellido", "edad", "tipoDocumento", "documento", "tipoCliente", "correo", "telefono", "clave","latitud","longitud"];
     $datosBusq = [$_SESSION['usuario'], $_SESSION['tipoUsuario']];
     $camposBus = ["usuario", "tipoCliente"];
     $db2->actualizarDatos($camposReq, $datosReq, $camposBus, $datosBusq, "clientes");

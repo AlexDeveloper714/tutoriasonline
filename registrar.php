@@ -160,8 +160,8 @@
                                 </div>
                                 <h2 id="mensaje">Espere mientras carga...</h2>
                                 <button type="button" class="btn btn-info btn-lg" id="boton1">Reiniciar ubicación</button>
-                                <input type="hidden" name="lat" id="lat" value="" required/>
-                                <input type="hidden" name="lon" id="lon" value="" required/>
+                                <input type="hidden" name="lat" id="lat" name="lat" value="" required/>
+                                <input type="hidden" name="lon" id="lon" name="lon" value="" required/>
                                 <button type="submit" class="btn btn-info btn-lg" name="enviarCliente" id="registrarCliente">Registrarse</button>
                                 <!--
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>     
