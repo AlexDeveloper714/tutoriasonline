@@ -30,6 +30,7 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/accionesTutorias.js"></script>
+        <script src="js/googleMaps.js"></script>
     </head>
 
     <body>
@@ -152,11 +153,13 @@
                             <div class="col-md-4 col-sm-6">
                                 <h1>Ubicación Google Maps</h1>
                                 <br><br>
-                                <div id="map" style="width:300px; height:300px">
-                                    <script src="js/googleMaps.js"></script>
-                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                                <div id="map" style="width:400px; height:300px">
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=geolocalizarUsuario"
                                     async defer></script><br>
+
                                 </div>
+                                <h2 id="mensaje">Espere mientras carga...</h2>
+                                <button type="button" class="btn btn-info btn-lg" id="boton1">Reiniciar ubicación</button>
                                 <input type="hidden" name="lat" id="lat" value="" required/>
                                 <input type="hidden" name="lon" id="lon" value="" required/>
                                 <button type="submit" class="btn btn-info btn-lg" name="enviarCliente" id="registrarCliente">Registrarse</button>

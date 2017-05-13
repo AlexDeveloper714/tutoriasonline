@@ -1,10 +1,8 @@
-var pos, marker, uniminuto, map, contentString, infoWindow, infowindow;
-var latX, lonY;
-function initMap() {
-    uniminuto = {lat: 4.698488, lng: -74.089815};
-//    var micasa = {lat: 4.691919, lng: -74.095337};
-//    var myLatLng = {lat: 4.691919, lng: -74.095337};
+var pos, marker, uniminuto, map, contentString, infoWindow, infowindow, latX, lonY;
+var title, nombre, apellido, correo, usuario, documento, telefono, edad;
 
+function geolocalizarUsuario() {
+    uniminuto = {lat: 4.698488, lng: -74.089815};
     map = new google.maps.Map(document.getElementById('map'), {
         center: uniminuto,
         scrollwheel: true,
@@ -12,38 +10,48 @@ function initMap() {
         zoomControl: true,
         mapTypeControl: false
     });
-//    map.addListener('click', function () {
-//        var marker = new google.maps.Marker({
-//            position: myLatLng,
-//            map: map,
-//            title: 'Hello World!',
-//            draggable: true
-//        });
-//        marker.setMap(map);
-//    });
-
-//    var directionsDisplay = new google.maps.DirectionsRenderer({
-//        map: map
-//    });
-//
-//    // Set destination, origin and travel mode.
-//    var request = {
-//        destination: micasa,
-//        origin: uniminuto,
-//        travelMode: 'DRIVING'
-//    };
-
-//    // Pass the directions request to the directions service.
-//    var directionsService = new google.maps.DirectionsService();
-//    directionsService.route(request, function (response, status) {
-//        if (status == 'OK') {
-//            // Display the route on the map.
-//            directionsDisplay.setDirections(response);
-//        }
-//    });
-    infoWindow;
-    infowindow = new google.maps.InfoWindow({content: contentString});
-
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            latX = position.coords.latitude;
+            lonY = position.coords.longitude;
+            $("#lat").attr("value", latX);
+            $("#lon").attr("value", lonY);
+            $("#mensaje").text("Carga completa");
+            marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: 'Ubicación Hallada :D'
+            });
+            map.setCenter(pos);
+            infoWindow.setMarker(marker);
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }, function () {
+            $("#mensaje").text("Debes aceptar localizarte");
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        $("#mensaje").text("NO te podemos geolocalizar");
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
+    marker.addListener('click', toggleBounce);
+}
+function buscarTutores() {
+    uniminuto = {lat: 4.698488, lng: -74.089815};
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: uniminuto,
+        scrollwheel: true,
+        zoom: 17,
+        zoomControl: true,
+        mapTypeControl: false
+    });
     contentString = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
@@ -64,6 +72,7 @@ function initMap() {
             '(last visited June 22, 2009).</p>' +
             '</div>' +
             '</div>';
+    infowindow = new google.maps.InfoWindow({content: contentString});
     // Try HTML5 geolocation.
 
     if (navigator.geolocation) {
@@ -76,27 +85,30 @@ function initMap() {
             lonY = position.coords.longitude;
             $("#lat").attr("value", latX);
             $("#lon").attr("value", lonY);
+            $("#mensaje").text("Carga completa");
             marker = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: 'Ubicación Hallada :D'
             });
             map.setCenter(pos);
-//            infoWindow.setPosition(pos);
             infoWindow.setMarker(marker);
             marker.addListener('click', function () {
                 infowindow.open(map, marker);
             });
-//            infoWindow.setContent('<h1>Esta es tu ubicacion :D</h1>');
+            marker.addListener('click', toggleBounce);
         }, function () {
+            $("#mensaje").text("Debes aceptar localizarte");
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
+        $("#mensaje").text("NO te podemos geolocalizar");
         handleLocationError(false, infoWindow, map.getCenter());
     }
-    marker.addListener('click', toggleBounce);
+
 }
+
 function toggleBounce() {
     if (marker.getAnimation() !== null) {
         marker.setAnimation(null);
@@ -104,22 +116,10 @@ function toggleBounce() {
         marker.setAnimation(google.maps.Animation.BOUNCE);
     }
 }
-
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
             'Error: The Geolocation service failed.' :
             'Error: Your browser doesn\'t support geolocation.');
 }
-var title = document.title;
-switch (title) {
-    case "Mi perfil":
-        initMap();
-        break;
-    case "Registro tutorias":
-        initMap();
-        break;
-    case "Busqueda de tutorias":
-        break;
-}
+title = document.title;

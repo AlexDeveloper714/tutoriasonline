@@ -3,7 +3,7 @@ function formCliente() {
     $("#perfil").hide();
     var valor = $("#sesion").attr("content");
 //    alert(valor);
-    if (valor!="") {
+    if (valor != "") {
         $("#perfil").show();
 //        $("#ingreso").hide();
 //        $("#registro").hide();
@@ -54,6 +54,10 @@ function formCliente() {
                     $("#rep_clave").attr("type", "password");
                 }
             });
+            $("#boton1").click(function () {
+                geolocalizarUsuario();
+            });
+
             break;
         case "tutorias":
             break;
