@@ -152,10 +152,13 @@
                             <div class="col-md-4 col-sm-6">
                                 <h1>Ubicación Google Maps</h1>
                                 <br><br>
-                                <div id="map" style="width:300px; height:300px"></div>
-                                <script src="js/googleMaps.js"></script>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
-                                async defer></script><br>
+                                <div id="map" style="width:300px; height:300px">
+                                    <script src="js/googleMaps.js"></script>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                                    async defer></script><br>
+                                </div>
+                                <input type="hidden" name="lat" id="lat" value="" required/>
+                                <input type="hidden" name="lon" id="lon" value="" required/>
                                 <button type="submit" class="btn btn-info btn-lg" name="enviarCliente" id="registrarCliente">Registrarse</button>
                                 <!--
                                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrarse</button>     

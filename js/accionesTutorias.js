@@ -2,14 +2,15 @@ function formCliente() {
     //Mandar $_session() OJO
     $("#perfil").hide();
     var valor = $("#sesion").attr("content");
+//    alert(valor);
     if (valor!="") {
         $("#perfil").show();
-        $("#ingreso").hide();
-        $("#registro").hide();
+//        $("#ingreso").hide();
+//        $("#registro").hide();
     } else {
         $("#perfil").hide();
-        $("#ingreso").show();
-        $("#registro").show();
+//        $("#ingreso").show();
+//        $("#registro").show();
     }
     var title = document.title;
     switch (title) {
