@@ -32,6 +32,7 @@ function formCliente() {
                     }
             );
             $("#boton1").click(function () {
+                $("#mensaje").text("Espera mientras carga...");
                 geolocalizarUsuario();
             });
             break;
@@ -58,12 +59,14 @@ function formCliente() {
                 }
             });
             $("#boton1").click(function () {
+                $("#mensaje").text("Espera mientras carga...");
                 geolocalizarUsuario();
             });
 
             break;
         case "Busqueda de tutorias":
             $("#boton1").click(function () {
+                $("#mensaje").text("Espera mientras carga...");
                 geolocalizarUsuario();
             });
             break;
