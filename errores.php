@@ -112,7 +112,7 @@
                         <p>Tambien ocurre al momento de registrarte, debido a que ese
                             usuario ya existe en el sistema :/
                         </p>
-                        <a href="javascript:history.back(1)" >Retorna a la pagina anterior</a>
+                        <a href="javascript:history.back()" >Retorna a la pagina anterior</a>
                     </div>
                     <div ng-app="" class="col-sm-8">
                         <p>Input something in the input box:</p>

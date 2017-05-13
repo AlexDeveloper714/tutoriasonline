@@ -1,4 +1,5 @@
 <?php
+
 //Revisar que las tablas divisoras (m*m) sirvan
 @session_start();
 require_once 'database.php';
@@ -10,7 +11,8 @@ if (isset($_POST['entrarSistema'])) {
     $datosBus = [$_POST ['usuario'], $_POST['clave'], "ACTIVO"];
     $camposBus = ["usuario", "clave", "estadoUsuario"];
     $db2->seleccionDatos($camposReq, $camposBus, $datosBus, "clientes");
-    if ($_SESSION["usuario"] != "") {
+    $datosCaptcha = $_POST["g-recaptcha-response"];
+    if ($_SESSION["usuario"] != "" && $_POST["g-recaptcha-response"] != "") {
         require 'perfil.php';
     } else {
         $_SESSION['usuario'] = "";
@@ -21,23 +23,26 @@ if (isset($_POST['entrarSistema'])) {
 //Cerrar sesion OK
 if (isset($_POST['salirSistema'])) {
     if ($_SESSION['usuario'] != "") {
-        $_SESSION['usuario']="";
+        $_SESSION['usuario'] = "";
     }
     require 'index.php';
 }
 //Insertar y verificar Clientes OK
 if (isset($_POST['enviarCliente'])) {
     $db2->conectarDB();
+    $datosCaptcha = $_POST["g-recaptcha-response"];
     if ($db2->verificarClientes($_POST ['documento'], "clientes") > 0) {
         header("Location: errores.php");
-    } else {
+    } else if ($_POST["g-recaptcha-response"] != "") {
         $datosReq = [0, $_POST ['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['tipoDocumento'],
             $_POST['documento'], $_POST ['correo'], $_POST['universidad']
             , $_POST['telefono'], $_POST ['tipoCliente']
-            , $_POST['usuario'], "ACTIVO", $_POST['clave'],$_POST['lat'],$_POST['lon']];
+            , $_POST['usuario'], "ACTIVO", $_POST['clave'], $_POST['lat'], $_POST['lon']];
         $db2->insertarDatos($datosReq, "clientes");
+        require 'index.php';
+    } else {
+        header("Location: errores.php");
     }
-    require 'index.php';
 }
 //Insertar y verificar tutorias 1/2
 if (1 == 2) {
@@ -59,8 +64,8 @@ if (1 == 2) {
 //Mostrar localización anterior en perfil
 if (isset($_POST['hacerCambios'])) {
     $db2->conectarDB();
-    $datosReq = [$_POST ['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['tipoDocumento'], $_POST['documento'], $_POST['tipoUsuario'], $_POST['correo'], $_POST['telefono'], $_POST['clave'],$_POST['lat'],$_POST['lon']];
-    $camposReq = ["nombre", "apellido", "edad", "tipoDocumento", "documento", "tipoCliente", "correo", "telefono", "clave","latitud","longitud"];
+    $datosReq = [$_POST ['nombre'], $_POST['apellido'], $_POST['edad'], $_POST['tipoDocumento'], $_POST['documento'], $_POST['tipoUsuario'], $_POST['correo'], $_POST['telefono'], $_POST['clave'], $_POST['lat'], $_POST['lon']];
+    $camposReq = ["nombre", "apellido", "edad", "tipoDocumento", "documento", "tipoCliente", "correo", "telefono", "clave", "latitud", "longitud"];
     $datosBusq = [$_SESSION['usuario'], $_SESSION['tipoUsuario']];
     $camposBus = ["usuario", "tipoCliente"];
     $db2->actualizarDatos($camposReq, $datosReq, $camposBus, $datosBusq, "clientes");
@@ -81,7 +86,7 @@ if (1 == 2) {
     } else {
         
     }
-}    
+}
 //"Eliminar"  usuario OK
 if (isset($_POST['desactivarUsuario'])) {
     $db2->conectarDB();

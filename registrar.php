@@ -125,16 +125,16 @@
                                 <input class="form-control" type="password" name="clave" id="clave" required>
                                 <h2>Repetir Contraseña:</h2>
                                 <input class="form-control" type="password" name="rep_clave" id="rep_clave" required>
-                                <h2>Tipo de usuario:</h2>
-                                <select class="form-control" name="tipoCliente" required>
-                                    <option>Tutor</option>
-                                    <option>Cliente</option>
-                                </select>
                                 <div class="checkbox col-xs-4">
                                     <label>
                                         <input type="checkbox" value="" id="mostrarPass">Ver pasaword
                                     </label>
                                 </div>
+                                <h2>Tipo de usuario:</h2>
+                                <select class="form-control" name="tipoCliente" required>
+                                    <option>Tutor</option>
+                                    <option>Cliente</option>
+                                </select>                               
                                 <h2>Universidad:</h2>
                                 <select name="universidad"class="form-control" required>
                                     <?php
@@ -156,7 +156,6 @@
                                 <div id="map" style="width:400px; height:300px">
                                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=geolocalizarUsuario"
                                     async defer></script><br>
-
                                 </div>
                                 <h2 id="mensaje">Espere mientras carga...</h2>
                                 <button type="button" class="btn btn-info btn-lg" id="boton1">Reiniciar ubicación</button>
