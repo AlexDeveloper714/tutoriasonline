@@ -39,6 +39,8 @@ function geolocalizarUsuario() {
     } else {
         // Browser doesn't support Geolocation
         $("#mensaje").text("NO te podemos geolocalizar");
+        latX = 0;
+        lonY = 0;
         handleLocationError(false, infoWindow, map.getCenter());
     }
     marker.addListener('click', toggleBounce);
@@ -99,6 +101,8 @@ function buscarTutores() {
             marker.addListener('click', toggleBounce);
         }, function () {
             $("#mensaje").text("Debes aceptar localizarte");
+            latX = 0;
+            lonY = 0;
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
