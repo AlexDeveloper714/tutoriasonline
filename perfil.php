@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <meta id="sesion" content="<?php echo $_SESSION['usuario'];?>">
+        <meta id="sesion" content="<?php echo $_SESSION['usuario']; ?>">
 
         <title>Mi perfil</title>
 
@@ -36,6 +36,8 @@
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/accionesTutorias.js"></script>
         <script src="js/accionesTutorias.js"></script>
+        <script src="js/googleMaps.js"></script>
+
 
     </head>
 
@@ -56,37 +58,37 @@
                     <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="Basica"></a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.php">Inicio</a></li>                      
-                        <li>
-                            <a href="ingresar.php" id="ingreso">Ingreso</a>
-                        </li>  
-                        <li>
-                            <a href="registrar.php" id="registro">Registro</a>
-                        </li>  
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="tutorias.php">Por hora</a></li>
-                                <li><a href="tutorias.php">Por precio</a></li>
-                                <li><a href="tutorias.php">Por votos</a></li>
-                                <li><a href="tutorias.php">Por ubicación</a></li>
-                                <li><a href="tutorias.php">Busqueda Avanzada</a></li>
-                            </ul>
-                        </li> 
-                        <li class="dropdown">
-                            <a href="perfil.php" id="perfil">Mi perfil</a>
-                        </li> 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="soporte.php">Via Chat</a></li>
-                                <li><a href="soporte.php">Via Email</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="acerca_de.php">Acerca de</a>
-                        </li>
-                    </ul>
+                    <li class="active"><a href="index.php">Inicio</a></li>                      
+                    <li>
+                        <a href="ingresar.php" id="ingreso">Ingreso</a>
+                    </li>  
+                    <li>
+                        <a href="registrar.php" id="registro">Registro</a>
+                    </li>  
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buscar Tutorias <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tutorias.php">Por hora</a></li>
+                            <li><a href="tutorias.php">Por precio</a></li>
+                            <li><a href="tutorias.php">Por votos</a></li>
+                            <li><a href="tutorias.php">Por ubicación</a></li>
+                            <li><a href="tutorias.php">Busqueda Avanzada</a></li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="perfil.php" id="perfil">Mi perfil</a>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soporte <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="soporte.php">Via Chat</a></li>
+                            <li><a href="soporte.php">Via Email</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="acerca_de.php">Acerca de</a>
+                    </li>
+                </ul>
             </div>
         </header><!--/header--><!-- Page Title -->
         <div class="section section-breadcrumbs">
@@ -98,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <h2>Hola: <?php echo $_SESSION['usuario']?></h2>
+        <h2>Hola: <?php echo $_SESSION['usuario'] ?></h2>
         <!-- Services -->
         <div class="section section-white">
             <div class="container">
@@ -108,18 +110,18 @@
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
                                 <h3>Nombre: </h3>
-                                <input class="form-control" id="nombre" name="nombre" type="text" disabled=""  value='<?php echo $_SESSION['nombre'];?>' required>
+                                <input class="form-control" id="nombre" name="nombre" type="text" disabled=""  value='<?php echo $_SESSION['nombre']; ?>' required>
                                 <h3>Apellido: </h3>
-                                <input class="form-control" id="apellido" name="apellido" type="text" disabled="" value='<?php echo $_SESSION['apellido'];?>'  required>
+                                <input class="form-control" id="apellido" name="apellido" type="text" disabled="" value='<?php echo $_SESSION['apellido']; ?>'  required>
                                 <h3>Edad: </h3>
-                                <input class="form-control" id="edad" name="edad" type="number" disabled="" value='<?php echo $_SESSION['edad'];?>' required>
+                                <input class="form-control" id="edad" name="edad" type="number" disabled="" value='<?php echo $_SESSION['edad']; ?>' required>
                                 <h3>Tipo de documento: </h3>
                                 <select class="form-control" id="tipoDocumento" name="tipoDocumento" disabled="" required>
                                     <option>Cedula de Ciudadania</option>
                                     <option>Tarjeta de Identidad</option>
                                 </select> 
                                 <h3>Número de documento: </h3>
-                                <input class="form-control" id="documento" name="documento" type="number" disabled="" value='<?php echo $_SESSION['documento'];?>' required>
+                                <input class="form-control" id="documento" name="documento" type="number" disabled="" value='<?php echo $_SESSION['documento']; ?>' required>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
@@ -132,18 +134,21 @@
                                     <option>Cliente</option>
                                 </select>
                                 <h3>Correo:</h3>
-                                <input class="form-control" type="email" name="correo" id="correo" disabled="" value='<?php echo $_SESSION['correo'];?>' required>
+                                <input class="form-control" type="email" name="correo" id="correo" disabled="" value='<?php echo $_SESSION['correo']; ?>' required>
                                 <h3>Telefono:</h3>
-                                <input class="form-control" type="number" name="telefono" id="telefono" disabled="" value='<?php echo $_SESSION['telefono'];?>' required>
+                                <input class="form-control" type="number" name="telefono" id="telefono" disabled="" value='<?php echo $_SESSION['telefono']; ?>' required>
                                 <h3>Contraseña:</h3>
                                 <input class="form-control" type="password" name="clave" id="clave" required disabled="">
                                 <h3>Repetir Contraseña:</h3>
                                 <input class="form-control" type="password" name="rep_clave" id="rep_clave" required disabled="">
                                 <h3>Ubicación</h3>
                                 <div id="map" style="width:300px; height:300px"></div>
-                                <script src="js/googleMaps.js"></script>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=geolocalizarUsuario"
                                 async defer></script><br>
+                                 <h2 id="mensaje">Espere mientras carga...</h2>
+                                <input type="button" class="btn btn-default" id="boton1" value="Reiniciar ubicación">
+                                <input type="hidden" name="lat" id="lat" value="" required/>
+                                <input type="hidden" name="lon" id="lon" value="" required/>
                                 <input class="btn btn-default" type="button" id="cambiarInfo" value="Cambiar Información">
                                 <input class="btn btn-default" id="hacerCambios"  name="hacerCambios" type="submit" value="Aplicar Cambios" disabled="">
                             </div>

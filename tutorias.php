@@ -35,6 +35,7 @@
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/accionesTutorias.js"></script>
+        <script src="js/googleMaps.js"></script>
 
 
     </head>
@@ -102,10 +103,13 @@
                 <h1>Mapa de tutorias</h1>
                 <br><br>
                 <div id="map" style="width:300px; height:300px"></div>
-                <script src="js/googleMaps.js"></script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=initMap"
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=buscarTutores"
                 async defer></script>
             </div>
+            <h2 id="mensaje">Espere mientras carga...</h2>
+            <input type="button" class="btn btn-default" id="boton1" value="Reiniciar ubicación">
+            <input type="hidden" name="lat" id="lat" value="" required/>
+            <input type="hidden" name="lon" id="lon" value="" required/>
             <form  method="post" action="control.php">
                 <div class="col-md-6 col-sm-6">
                     <div class="service-wrapper">

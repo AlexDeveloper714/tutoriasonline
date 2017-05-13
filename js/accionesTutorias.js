@@ -3,14 +3,14 @@ function formCliente() {
     $("#perfil").hide();
     var valor = $("#sesion").attr("content");
 //    alert(valor);
-    if (valor != "") {
+    if (valor == "") {
         $("#perfil").show();
-//        $("#ingreso").hide();
-//        $("#registro").hide();
+        $("#ingreso").hide();
+        $("#registro").hide();
     } else {
         $("#perfil").hide();
-//        $("#ingreso").show();
-//        $("#registro").show();
+        $("#ingreso").show();
+        $("#registro").show();
     }
     var title = document.title;
     switch (title) {
@@ -31,6 +31,9 @@ function formCliente() {
                         $("#rep_clave").removeAttr("disabled").focus();
                     }
             );
+            $("#boton1").click(function () {
+                geolocalizarUsuario();
+            });
             break;
         case "Ingreso tutorias":
             break;
@@ -59,7 +62,10 @@ function formCliente() {
             });
 
             break;
-        case "tutorias":
+        case "Busqueda de tutorias":
+            $("#boton1").click(function () {
+                geolocalizarUsuario();
+            });
             break;
         case "Mis tutorias":
             $('#dataTables-example').DataTable({
