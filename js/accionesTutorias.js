@@ -3,7 +3,7 @@ function formCliente() {
     $("#perfil").hide();
     var valor = $("#sesion").attr("content");
 //    alert(valor);
-    if (valor == "") {
+    if (valor != "") {
         $("#perfil").show();
         $("#ingreso").hide();
         $("#registro").hide();
@@ -61,6 +61,7 @@ function formCliente() {
             $("#boton1").click(function () {
                 $("#mensaje").text("Espera mientras carga...");
                 geolocalizarUsuario();
+                alert($("#lat").val()+" "+$("#lon").val());
             });
 
             break;
