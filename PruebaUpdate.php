@@ -6,8 +6,8 @@
     <head>
         <meta charset="UTF-8">
         <title>AJAX</title>
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script src="js/accionesTutorias.js"></script>
+        <script src="js/API/jquery-1.9.1.min.js"></script>
+        <script src="js/Acciones/accionesTutorias.js"></script>
     </head>
     <body>
         <h3>Prueba de AJAX</h3>

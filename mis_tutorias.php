@@ -33,10 +33,14 @@
         <link rel="stylesheet" href="css/sb-admin-2.css" type="text/css"/>
 
 
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script src="js/accionesTutorias.js"></script>
-
+        <script src="js/API/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/API/angular.min.js"></script>
+        <script src="js/API/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/API/jquery-1.9.1.min.js"></script>
+        <script src="js/Acciones/accionesTutorias.js"></script>
+        <script src="js/API/bootstrap.min.js"></script>
+        <script src="js/API/jquery.easing.min.js"></script>
+        <script src="js/API/scrolling-nav.js"></script>
 
     </head>
 
@@ -234,14 +238,5 @@
             </div>
         </div>
 
-        <!-- Scrolling Nav JavaScript -->
-        <!-- Javascripts -->
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/scrolling-nav.js"></script>		
-        <script src="js/jquery.dataTables.min.js"></script>
-        <script src="js/dataTables.bootstrap.min.js"></script>
-        <script src="js/responsive_table.js"></script>
-        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

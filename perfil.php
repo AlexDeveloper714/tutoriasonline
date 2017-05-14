@@ -31,13 +31,15 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/sb-admin-2.css" type="text/css"/>
 
-
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script src="js/accionesTutorias.js"></script>
-        <script src="js/accionesTutorias.js"></script>
-        <script src="js/googleMaps.js"></script>
-
+        <script src="js/API/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/API/angular.min.js"></script>
+        <script src="js/API/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/API/jquery-1.9.1.min.js"></script>
+        <script src="js/Acciones/accionesTutorias.js"></script>
+        <script src="js/API/bootstrap.min.js"></script>
+        <script src="js/API/jquery.easing.min.js"></script>
+        <script src="js/API/scrolling-nav.js"></script>
+        <script src="js/Acciones/googleMaps.js"></script>
 
     </head>
 
@@ -145,7 +147,7 @@
                                 <div id="map" style="width:300px; height:300px"></div>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUPIcnUyUNSozzLevs2IO8eSvCtaD4ZOY&callback=geolocalizarUsuario"
                                 async defer></script><br>
-                                 <h2 id="mensaje">Espere mientras carga...</h2>
+                                <h2 id="mensaje">Espere mientras carga...</h2>
                                 <input type="button" class="btn btn-default" id="boton1" value="Reiniciar ubicación">
                                 <input type="hidden" name="lat" id="lat" value="" required/>
                                 <input type="hidden" name="lon" id="lon" value="" required/>
@@ -242,9 +244,5 @@
 
             </div>
         </div>
-        <!-- Scrolling Nav JavaScript -->
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/scrolling-nav.js"></script>
-        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
