@@ -1,5 +1,4 @@
 <?php
-
 //Revisar que las tablas divisoras (m*m) sirvan
 @session_start();
 require_once 'database.php';
