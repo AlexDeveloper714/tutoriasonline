@@ -23,7 +23,10 @@
         require_once 'database.php';
         $db2 = new database();
         $db2->conectarDB();
-        $rec = $db2->selectorOption("clientes", "documento", $documento);
+        $campoReq=["*"];
+        $campoBus=["documento"];
+        $datosBus=[$documento];
+        $rec =$db2->seleccionDatos($campoReq, $campoBus, $datosBus, "clientes");
         while ($row = mysqli_fetch_array($rec)) {
             echo "<tr>";
             echo "<td>$row[0]</td>";

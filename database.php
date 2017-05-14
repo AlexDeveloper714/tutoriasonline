@@ -90,6 +90,7 @@ class database {
         $seleccionar = substr($seleccionar, 0, -5) . ";";
         $query = $seleccionar;
         $res = mysqli_query($this->link, $query);
+        echo $query;
         while ($row = mysqli_fetch_array($res)) {
             $_SESSION["nombre"] = $row[1];
             $_SESSION["apellido"] = $row[2];
@@ -101,6 +102,8 @@ class database {
             $_SESSION["tipoUsuario"] = $row[9];
             $_SESSION["usuario"] = $row[10];
         }
+        $res = mysqli_query($this->link, $query);
+        return $res;
     }
 
     function selectorOption($tabla = "", $campo = "", $dato = "", $campoEspeci = "") {
