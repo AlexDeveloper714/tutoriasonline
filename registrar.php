@@ -95,7 +95,7 @@
         </div>
         <div class="section section-white">
             <div class="row">
-                <form  method="post" action="php/controles.php">
+                <form  method="post" action="controles.php">
                     <div class="col-md-12 col-sm-6">
                         <div class="service-wrapper">
                             <h1>Registro por formulario</h1>

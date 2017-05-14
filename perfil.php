@@ -105,7 +105,7 @@
         <div class="section section-white">
             <div class="container">
                 <div class="row">
-                    <form method="post" action="php/controles.php">
+                    <form method="post" action="controles.php">
                         <div class="col-md-4 col-sm-6">
                             <h3>Modificar Informacion Personal</h3>
                             <div class="service-wrapper">
@@ -155,7 +155,7 @@
                         </div>
                     </form>
                     <div class="col-md-3 col-sm-6">
-                        <form method="post" action="php/controles.php">
+                        <form method="post" action="controles.php">
                             <div class="service-wrapper">
                                 <i class="icon-user"></i>
                                 <h3>Elimina tu cuenta</h3>
