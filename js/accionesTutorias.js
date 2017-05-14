@@ -1,6 +1,17 @@
 function formCliente() {
     //Mandar $_session() OJO
     $("#perfil").hide();
+//    Ejemplo de post OJO
+//Cargar Pagina
+//    $().click(
+//            function () {
+//                $.post("ejemplo_POST.php", function () {
+//
+//                });
+//            }
+//    );
+//Enviar datos
+
     var valor = $("#sesion").attr("content");
 //    alert(valor);
     if (valor != "") {
@@ -61,7 +72,7 @@ function formCliente() {
             $("#boton1").click(function () {
                 $("#mensaje").text("Espera mientras carga...");
                 geolocalizarUsuario();
-                alert($("#lat").val()+" "+$("#lon").val());
+                alert($("#lat").val() + " " + $("#lon").val());
             });
 
             break;
@@ -78,6 +89,15 @@ function formCliente() {
             $('#dataTables-example_2').DataTable({
                 responsive: true
             });
+            break;
+        case "AJAX":
+            $("#AjaxButton").click(
+                    function () {
+                        $.post("ejemplo_POST.php", {documento: $("#documento_2").val()}, function (htmlexterno) {
+                            $("#cargaexterna").html(htmlexterno);
+                        });
+                    }
+            );
             break;
 //        case "Error no especificado": 
 //            $ingreso=$("#ingreso").val();
