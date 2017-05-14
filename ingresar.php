@@ -106,7 +106,7 @@
                 <div class="col-md-12 col-sm-6">
                     <div class="service-wrapper">
                         <div class="col-md-4 col-md-offset-2 col-sm-6">
-                            <form  method="post" action="controles.php">
+                            <form  method="post" action="php/controles.php">
                                 <h1>Ingreso</h1>
                                 <h2>Usuario:</h2>
                                 <input class="form-control" type="text" id="usuario" name="usuario">
