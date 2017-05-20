@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2017 a las 06:51:44
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,18 +31,16 @@ CREATE TABLE `clientes` (
   `tipoCliente` varchar(200) NOT NULL,
   `usuario` varchar(200) NOT NULL,
   `estadoUsuario` varchar(200) NOT NULL,
-  `clave` varchar(11) NOT NULL,
-  `latitud` double NOT NULL,
-  `longitud` double NOT NULL
+  `clave` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `edad`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`, `latitud`, `longitud`) VALUES
-(1, 'Alexander', 'Diaz', 25, 'Cedula de Ciudadania', '1014244891', 'b@b.com', 'ANDES', '3192142650', 'Tutor', 'Alexander', 'ACTIVO', 'Diaz', 4.6921615, -74.09537399999999),
-(2, 'Cristian', 'Felipe', 24, 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 'Cruz', 0, 0);
+INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `edad`, `tipoDocumento`, `documento`, `correo`, `universidad`, `telefono`, `tipoCliente`, `usuario`, `estadoUsuario`, `clave`) VALUES
+(1, 'Alexander', 'Diaz', 25, 'Cedula de Ciudadania', '1014244891', 'b@b.com', 'ANDES', '3192142650', 'Tutor', 'Alexander', 'ACTIVO', '123'),
+(2, 'Cristian', 'Felipe', 24, 'Cedula de Ciudadania', '123456', 'a@a.com', 'ANDES', '123456', 'Tutor', 'Al_2', 'ACTIVO', 'Cruz');
 
 -- --------------------------------------------------------
 
