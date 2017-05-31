@@ -13,7 +13,7 @@ function formCliente() {
 //Enviar datos
 
     var valor = $("#sesion").attr("content");
-//    alert(valor);
+    alert(valor);
     if (valor != "") {
         $("#perfil").show();
         $("#ingreso").hide();
