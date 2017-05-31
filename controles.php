@@ -1,4 +1,5 @@
 <?php
+
 //Revisar que las tablas divisoras (m*m) sirvan
 @session_start();
 require_once 'database.php';
@@ -107,4 +108,34 @@ if (isset($_POST['desactivarUsuario'])) {
     $db2->actualizarDatos($camposReq, $datosReq, $camposBus, $datosBusq, "clientes");
     session_destroy();
     require 'index.php';
+}
+
+if (isset($_POST['crearXML'])) {
+    $db2->conectarDB();
+    $message = "";
+    $camposBus = ["documento", "nombre"];
+    $res = $db2->selectorOption("clientes", "documento , nombre");
+    while ($row = mysqli_fetch_array($res)) {
+        $message = "<xml><cc>" . $row[0] . "</cc><nombre>" . $row[1] . "</nombre></xml>";
+    }
+    echo $message;
+
+    $nombre_archivo = "reportados.txt";
+
+    if (file_exists($nombre_archivo)) {
+        $mensaje = "El Archivo $nombre_archivo se ha modificado";
+    } else {
+        $mensaje = "El Archivo $nombre_archivo se ha creado";
+    }
+
+    if ($archivo = fopen($nombre_archivo, "a")) {
+        if (fwrite($archivo, $message."\n")) {
+            echo "Se ha ejecutado correctamente";
+        } else {
+            echo "Ha habido un problema al crear el archivo";
+        }
+
+        fclose($archivo);
+    }
+    require 'busquedasWeb.php';
 }
